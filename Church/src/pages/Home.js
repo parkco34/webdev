@@ -1,9 +1,16 @@
 import React from 'react';
+import MainContent from '../components/MainContent';
+import SideMenu from '../components/SideMenu';
 
 function Home() {
     return (
-        <p>Dis be ma motha fuckin Home Page!</p>
+		<div className="background-container">
+			<p>Dis be ma Home Page!</p>
+			<SideMenu />
+			<MainContent />	
+		</div>
     );
 }
 
 export default Home;
+
