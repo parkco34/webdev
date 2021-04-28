@@ -8,9 +8,9 @@ class NavBar extends React.Component {
             <div className={styles.spacer}>
                 <div className={styles.navbar}>
                     <p className={styles.signature}>UCC</p>
-                    <Link to="/"><span className={styles.navbtn}>Btn 1</span></Link>
-                    <Link to="/about"><span className={styles.navbtn}>Btn 2</span></Link>
-                    <Link to="/join"><span className={styles.navbtn}>Btn 3</span></Link>
+                    <Link to="/" style={{ textDecoration: 'none' }}><span className={styles.navbtn}>Btn 1</span></Link>
+                    <Link to="/about" style={{textDecoration: 'none'}}><span className={styles.navbtn}>Btn 2</span></Link>
+                    <Link to="/join" style={{textDecoration: 'none'}}><span className={styles.navbtn}>Btn 3</span></Link>
                 </div>
             </div>
         );
@@ -18,3 +18,4 @@ class NavBar extends React.Component {
 }
 
 export default NavBar;
+
