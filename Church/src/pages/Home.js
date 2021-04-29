@@ -1,16 +1,13 @@
 import React from 'react';
 import MainContent from '../components/MainContent';
-import SideMenu from '../components/SideMenu';
+import Background from '../components/Background';
 
 function Home() {
     return (
-		<div className="background-container">
-			<p>Dis be ma Home Page!</p>
-			<SideMenu />
-			<MainContent />	
+		<div className="backgroundContainer">
+            <Background />
 		</div>
     );
 }
 
 export default Home;
-
