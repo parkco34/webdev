@@ -1,15 +1,14 @@
-.imgContainer {
+.theBackground {
+    height: 100vh;
     width: 100%;
-    padding-bottom: 56.25%;
-    position: relative;
-    background: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 100%;
 }
 
-.imgContainer > img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
+.backgroundContainer {
+    height: 75%;
+    background-repeat: no-repeat;
+    background-position: 50% center;
 }
 
