@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import PaperSegment from './PaperSegment';
 
 const useStyles = makeStyles(thingy => ({
 	toolbar: thingy.mixins.toolbar,
@@ -18,6 +19,12 @@ const useStyles = makeStyles(thingy => ({
 	}
 }));
 
+const flexStyle = {
+	display: 'flex',
+	flexwrap: 'wrap',
+	justifyContent: 'center'
+};
+
 function MainContent() {
 	const classes = useStyles();
 
@@ -31,6 +38,9 @@ function MainContent() {
 				<Typography paragraph>
 					Writing some random stuff in case I feel this is will be useful...	
 				</Typography>
+			</div>
+			<div className={classes.content} style={flexStyle}>
+				<PaperSegment />
 			</div>
 		</main>
 	);
