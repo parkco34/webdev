@@ -4,9 +4,9 @@ import Background from '../components/Background';
 
 function Home() {
     return (
-		<div className="backgroundContainer">
-            <Background />
-		</div>
+	<div className="backgroundContainer">
+		<Background />
+	</div>
     );
 }
 
