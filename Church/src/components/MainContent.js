@@ -36,7 +36,7 @@ function MainContent() {
 			</div>
 			<div className={classes.content}>
 				<Typography paragraph>
-					Writing some random stuff in case I feel this is will be useful...	
+					Writing some random stuff in case I feel this is will be useful...
 				</Typography>
 			</div>
 			<div className={classes.content} style={flexStyle}>
@@ -47,3 +47,4 @@ function MainContent() {
 }
 
 export default MainContent;
+
