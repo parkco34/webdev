@@ -9,14 +9,21 @@ const useStyles = makeStyles(thingy => ({
 		flexGrow: 1,
 		backgroundColor: thingy.palette.background.default,
 		padding: thingy.spacing(3),
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
 	},
 	content: {
 		flexGrow: 1,
 		padding: thingy.spacing(3),
+        display: 'flex',
+        justifyContent: 'center',
+        fontSize: '36px',
+        fontFamily: 'youth-touch'
 	},
 	fullWidth: {
 		width: '100%',
-	}
+	},
 }));
 
 const flexStyle = {
@@ -32,11 +39,12 @@ function MainContent() {
 		<main className={classes.fullWidth}>
 			<div className={classes.toolbar} />
 			<div className={classes.title}>
-				<Typography variant='h6'>Title</Typography>
+				<Typography variant='h6' style={{fontFamily: 'youth-touch', fontSize: '48px', fontWeight: 'bold'}}>United Church of Your Mother's Balls</Typography>
 			</div>
 			<div className={classes.content}>
-				<Typography paragraph>
-					Writing some random stuff in case I feel this is will be useful...
+				<Typography className={classes.content}>
+				    "Don't swallow what Satan is trying to ram down your throat. Jesus comes first."
+                                                                        - Joel Olsteen
 				</Typography>
 			</div>
 			<div className={classes.content} style={flexStyle}>
@@ -47,4 +55,3 @@ function MainContent() {
 }
 
 export default MainContent;
-
