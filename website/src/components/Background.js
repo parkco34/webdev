@@ -1,8 +1,7 @@
 import React, {useEffect, useState, useRef} from "react";
-import '../cssModules/Background.module.css';
-import mainImage from '../Images/subImages/2014_2.jpg';
-import mainImage2 from '../Images/subImages/2014_1.jpg';
-import mobileImage from '../Images/devil.webp';
+import mainImage from '../myImages/subImages/2014_2.jpg';
+import mainImage2 from '../myImages/subImages/2014_1.jpg';
+import mobileImage from '../myImages/devil.webp';
 import styles from '../cssModules/Background.module.css';
 import NavBar from './NavBar';
 
@@ -73,4 +72,5 @@ const Background = () => {
 }
 
 export default Background;
+
 
