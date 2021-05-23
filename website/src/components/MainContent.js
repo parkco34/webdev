@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import PaperSegment from './PaperSegment';
@@ -19,7 +19,7 @@ const useStyles = makeStyles(thingy => ({
         display: 'flex',
         justifyContent: 'center',
         fontSize: '36px',
-        fontFamily: 'youth-touch'
+        fontFamily: 'Lucida Console'
 	},
 	fullWidth: {
 		width: '100%',
@@ -54,4 +54,5 @@ function MainContent() {
 }
 
 export default MainContent;
+
 
