@@ -8,3 +8,13 @@
 .image-list img {
     width: 250px;
 }
+
+.smooth {
+    transition: .3s cubic-bezier(0.3, 0, 0.4, 1) opacity;
+    opacity: 0;
+}
+
+.smooth.loaded {
+    opacity: 1;
+}
+
