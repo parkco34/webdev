@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../cssModules/NavBar.module.css';
 import { Link } from 'react-router-dom';
+import universe from '../myImages/subImages/dodecahedron.png';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -42,10 +43,10 @@ class NavBar extends React.Component {
                         this.state.status === "up" ?
                         "transparent" : "#fc1d0d",
                         position: "fixed",
-                        transition: "all 0.5s"
+                        transition: "all 0.5s",
             }}>
                 <div className={styles.navbar}>
-                    <p className={styles.signature} style={{fontSize: "155%"}}>UCC</p>
+                    <span className={styles.signature} ><img src={universe} id="Nav-logo"/></span>
                     <Link to="/"><span className={styles.navbtn}>Home</span></Link>
                     <Link to="/about"><span className={styles.navbtn}>About</span></Link>
                     <Link to="/join"><span className={styles.navbtn}>Join</span></Link>
@@ -56,4 +57,5 @@ class NavBar extends React.Component {
 }
 
 export default NavBar;
+
 
