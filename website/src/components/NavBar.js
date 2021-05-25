@@ -41,7 +41,7 @@ class NavBar extends React.Component {
                 className={styles.spacer}
                 style={{backgroundColor:
                         this.state.status === "up" ?
-                        "transparent" : "#fc1d0d",
+                        "transparent" : "white",
                         position: "fixed",
                         transition: "all 0.5s",
             }}>
