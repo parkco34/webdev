@@ -6,7 +6,30 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogActions from '@material-ui/core/DialogActions';
-import '../cssModules/Singin.module.css';
+import {withStyles} from '@material-ui/core/styles';
+import LoginButton from './clicks/LoginButton';
+
+
+//                        <div className="the-pressy">
+//                            <Button
+//                                variant="contained"
+//                                color="primary"
+//                                onClick={()=>{this.entre();}}
+//                            >
+//                                Log In
+//                            </Button>
+//                        </div>
+
+const styles = theme => ({
+	root: {
+		display: 'flex',
+		flexDirection: 'column',
+		alignItems: 'center',
+		justifyContent: 'center',
+		fontSize: 'calc(10px + 2vmin)',
+		margin: '15%'
+	},
+});
 
 class Signin extends Component {
     constructor(props) {
@@ -42,10 +65,12 @@ class Signin extends Component {
     };
 
     render() {
+		const {classes} = this.props;
+
         return (
             <div className="signin-container">
-                <header className="Signin-header">
-                    <div className="signin">
+                <header className="signin-header">
+                    <div className={classes.root}>
                         <TextField
                             variant="standard"
                             placeholder="Email"
@@ -57,27 +82,22 @@ class Signin extends Component {
 
                         <TextField
                             variant="standard"
-                            placeholder="Email"
+                            placeholder="Password"
                             margin="normal"
                             required
-                            onChange={this.setEmail}
-                            value={this.state.email}
+                            onChange={this.setPassword}
+                            value={this.state.password}
                         />
 
-                        <div className="the-pressy">
-                            <Button
-                                variant="contained"
-                                color="primary"
-                                onClick={()=>{this.entre();}}
-                            >
-                                Log In
-                            </Button>
-                        </div>
+						<LoginButton title="Submit" />
+
                     </div>
 
                     <Dialog
                         open={this.state.open}
                         onClose={this.handleClose}
+						aria-labelledby="alert-dialog-title"
+						aria-describedby="alert-dialog-description"
                     >
                         <DialogTitle id="alert-dialog-title">Sign In</DialogTitle>
                         <DialogContent>
@@ -97,4 +117,4 @@ class Signin extends Component {
     }
 }
 
-export default Signin;
+export default withStyles(styles, {withTheme: true})(Signin);
