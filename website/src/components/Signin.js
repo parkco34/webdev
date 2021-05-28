@@ -9,17 +9,6 @@ import DialogActions from '@material-ui/core/DialogActions';
 import {withStyles} from '@material-ui/core/styles';
 import LoginButton from './clicks/LoginButton';
 
-
-//                        <div className="the-pressy">
-//                            <Button
-//                                variant="contained"
-//                                color="primary"
-//                                onClick={()=>{this.entre();}}
-//                            >
-//                                Log In
-//                            </Button>
-//                        </div>
-
 const styles = theme => ({
 	root: {
 		display: 'flex',
@@ -27,7 +16,15 @@ const styles = theme => ({
 		alignItems: 'center',
 		justifyContent: 'center',
 		fontSize: 'calc(10px + 2vmin)',
-		margin: '15%'
+
+		'& .signin': {
+			display: 'flex',
+			flexDirection: 'column',
+			alignItems: 'center',
+			jusfityContent: 'center',
+			fontSize: 'calc(10px + 2vmin)',
+			margin: '15%',
+		},
 	},
 });
 
@@ -69,8 +66,8 @@ class Signin extends Component {
 
         return (
             <div className="signin-container">
-                <header className="signin-header">
-                    <div className={classes.root}>
+                <header className={classes.root}>
+                    <div className="signin">
                         <TextField
                             variant="standard"
                             placeholder="Email"
