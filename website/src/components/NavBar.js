@@ -1,7 +1,8 @@
 import React from 'react';
-import styles from '../cssModules/NavBar.module.css';
+import styles1 from '../cssModules/NavBar.module.css';
+import styles2 from '../cssModules/NavBar2.module.css';
 import { Link } from 'react-router-dom';
-import universe from '../myImages/subImages/dodecahedron.png';
+import universe from '../Images/subImages/dodecahedron.png';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -9,7 +10,8 @@ class NavBar extends React.Component {
 
         this.listener = null;
         this.state = {
-            status: "up"
+            status: "up",
+			styling: styles1,
         };
     }
 
@@ -38,18 +40,18 @@ class NavBar extends React.Component {
     render() {
         return (
             <div
-                className={styles.spacer}
+                className={this.state.styling.spacer}
                 style={{backgroundColor:
                         this.state.status === "up" ?
                         "transparent" : "white",
                         position: "fixed",
                         transition: "all 0.5s",
             }}>
-                <div className={styles.navbar}>
-                    <span className={styles.signature} ><img src={universe} id="Nav-logo"/></span>
-                    <Link to="/"><span className={styles.navbtn}>Home</span></Link>
-                    <Link to="/about"><span className={styles.navbtn}>About</span></Link>
-                    <Link to="/join"><span className={styles.navbtn}>Join</span></Link>
+                <div className={this.state.styling.navbar}>
+                    <span className={this.state.styling.signature} ><img src={universe} id="Nav-logo"/></span>
+                    <Link to="/"><span className={this.state.styling.navbtn}>Home</span></Link>
+                    <Link to="/about"><span className={this.state.styling.navbtn}>About</span></Link>
+                    <Link to="/join"><span className={this.state.styling.navbtn}>Join</span></Link>
                 </div>
             </div>
         );
@@ -57,5 +59,3 @@ class NavBar extends React.Component {
 }
 
 export default NavBar;
-
-
