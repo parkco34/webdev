@@ -1,6 +1,6 @@
 import React from 'react';
-import MainContent from '../components/MainContent';
-import Background from '../components/Background';
+import MainContent from '../comps/MainContent';
+import Background from '../comps/Background';
 
 function Home() {
     return (
@@ -12,3 +12,4 @@ function Home() {
 }
 
 export default Home;
+
