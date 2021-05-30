@@ -1,7 +1,7 @@
 // Passing props to state and syncing props to state using Hooks:
 import React, {Component} from 'react';
 import Button from '@material-ui/core/Button';
-import LoginBox from '../components/LoginBox';
+import LoginBox from '../comps/LoginBox';
 import ModalDialog from './ModalDialog';
 
 class Login extends Component {
@@ -27,7 +27,7 @@ class Login extends Component {
 				<Button variant="contained" color="primary" onClick={this.handleOpen}>
 					Signup
 				</Button>
-				
+
 				<ModalDialog open={this.state.isDialogOpen} handleClose={this.handleOpen}/>
 			</div>
 		);
@@ -35,3 +35,4 @@ class Login extends Component {
 };
 
 export default Login;
+
