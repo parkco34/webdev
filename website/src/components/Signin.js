@@ -8,6 +8,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogActions from '@material-ui/core/DialogActions';
 import {withStyles} from '@material-ui/core/styles';
 import LoginButton from './clicks/LoginButton';
+import './MandroidBB.css';
 
 const styles = theme => ({
 	root: {
@@ -25,6 +26,9 @@ const styles = theme => ({
 			fontSize: 'calc(10px + 2vmin)',
 			margin: '15%',
 		},
+        '& .submit-btn': {
+            fontSize: 'calc(10px + 2vmin)'
+        },
 	},
 });
 
@@ -67,7 +71,7 @@ class Signin extends Component {
         return (
             <div className="signin-container">
                 <header className={classes.root}>
-                    <div className="signin">
+                    <form className="signin">
                         <TextField
                             variant="standard"
                             placeholder="Email"
@@ -75,6 +79,7 @@ class Signin extends Component {
                             required
                             onChange={this.setEmail}
                             value={this.state.email}
+                            style={{fontFamily: 'MandroidBB'}}
                         />
 
                         <TextField
@@ -84,11 +89,13 @@ class Signin extends Component {
                             required
                             onChange={this.setPassword}
                             value={this.state.password}
+                            style={{fontFamily: 'MandroidBB'}}
                         />
 
-						<LoginButton title="Submit" />
-
-                    </div>
+                        <button style={{fontFamily: 'MandroidBB'}} type="button" className="submit-btn">
+                            <LoginButton title="Submit" />
+                        </button>
+                    </form>
 
                     <Dialog
                         open={this.state.open}
@@ -115,3 +122,4 @@ class Signin extends Component {
 }
 
 export default withStyles(styles, {withTheme: true})(Signin);
+
