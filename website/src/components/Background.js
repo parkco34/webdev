@@ -4,7 +4,7 @@ import mainImage2 from '../myImages/subImages/2014_1.jpg';
 import mobileImage from '../myImages/devil.webp';
 import styles from '../cssModules/Background.module.css';
 import NavBar from './NavBar';
-
+import styles1 from '../cssModules/NavBar.module.css';
 
 const Background = () => {
 	const [image, setImage] = useState(mainImage);
@@ -64,7 +64,7 @@ const Background = () => {
         <div className={styles.mainContainer}>
             <div className={styles.theBackground} style={{backgroundImage: `url(${image})`}}>
                 <div className={styles.backgroundContainer} >
-                    <NavBar />
+                    <NavBar theStyle={styles1} up="white" down="black"/>
                 </div>
             </div>
         </div>
