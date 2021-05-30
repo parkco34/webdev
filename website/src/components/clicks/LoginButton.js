@@ -12,7 +12,7 @@ const useStyles = makeStyles({
 		},
 		'& .box-1': {
 			backgroundColor: 'white',
-			border: 'solid 1px blue'
+			border: 'solid 1px white'
 		},
 		'& .btn': {
 			textAlign: 'center',
@@ -21,7 +21,7 @@ const useStyles = makeStyles({
 			width: '100px',
 			cursor: 'pointer'
 		},
-		'& .btn-one': {	
+		'& .btn-one': {
 			color: 'black',
 			transition: 'all 0.3s',
 			position: 'relative'
@@ -38,12 +38,12 @@ const useStyles = makeStyles({
 			height: '100%',
 			zIndex: '1',
 			opacity: '0',
-			transition: 'all 0.3s',
-			borderTopWidth: '1px',
+			transition: 'all 0.5s',
+			borderTopWidth: '3px',
 			borderTopStyle: 'solid',
 			borderBottomStyle: 'solid',
-			borderTopColor: 'blue',
-			borderBottomColor: 'blue',
+			borderTopColor: 'white',
+			borderBottomColor: 'white',
 			transform: 'scale(0.1, 1)'
 		},
 		'& .bt-one:hover span': {
@@ -51,7 +51,7 @@ const useStyles = makeStyles({
 		},
 		'& .btn-one:hover::before': {
 			opacity: '1',
-			transform: 'scale(1,1)',
+			transform: 'scale(1.7,1)',
 		},
 		'& .btn-one::after': {
 			content: '""',
@@ -61,15 +61,15 @@ const useStyles = makeStyles({
 			width: '100%',
 			height: '100%',
 			zIndex: '1',
-			transition: 'all 0.3s',
+			transition: 'all 0.5s',
 		},
 		'& .btn-one:hover::after': {
-			opacity: '0',
-			transform: 'scale(0.1, 1)',
-			backgroundColor: 'blue',
+			opacity: '0.4',
+			transform: 'scale(1.7, 1)',
+			backgroundColor: 'white',
 		},
 	},
-	
+
 });
 
 const LoginButton = props => {
