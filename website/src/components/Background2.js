@@ -1,7 +1,7 @@
 import React, {Component, useState, uesEffect} from 'react';
 import {withStyles, makeStyles} from '@material-ui/core/styles';
-import img1 from '../Images/subImages/joinus1.jpg';
-import img2 from '../Images/subImages/joinus2.jpg';
+import img1 from '../myImages/subImages/joinus1.jpg';
+import img2 from '../myImages/subImages/joinus2.jpg';
 
 const styles = makeStyles({
 	root2: {
@@ -82,3 +82,4 @@ const BackgroundImage = props => {
 }
 
 export default withStyles(useStyles)(Background2);
+
