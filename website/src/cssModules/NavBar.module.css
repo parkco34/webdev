@@ -49,12 +49,12 @@
     width: 50px;
 }
 
-.navbtn {
-    color: white;
+.navbtn1 {
     position: relative;
+    top: 0.75rem;
 }
 
-.navbtn:after {
+.navbtn1:after {
     content: "";
     position: absolute;
     right: 0;
@@ -67,9 +67,35 @@
     transition-timing-function: ease-out;
 }
 
-.navbtn:hover:after,
-.navbtn:focus:after,
-.navbtn:active:after {
+.navbtn1:hover:after,
+.navbtn1:focus:after,
+.navbtn1:active:after {
+    left: 0;
+    right: auto;
+    width: 100%;
+}
+
+.navbtn2 {
+    position: relative;
+    top: 0.75rem;
+}
+
+.navbtn2:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 0;
+    bottom: -5px;
+    background: black;
+    height: 4px;
+    transition-property: width;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+
+.navbtn2:hover:after,
+.navbtn2:focus:after,
+.navbtn2:active:after {
     left: 0;
     right: auto;
     width: 100%;
