@@ -1,12 +1,11 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
-import NavBar from '../components/NavBar';
+import NavBar from '../comps/NavBar';
+import styles2 from '../cssModules/NavBar2.module.css';
 
 const useStyles = makeStyles({
 	root: {
 		'& .main-container': {
-			display: 'flex',
-			position: 'relative',	
 		},
 	},
 });
@@ -14,11 +13,14 @@ const useStyles = makeStyles({
 function About() {
     return (
 		<div>
-			<NavBar />
-			<div className="main-container">Where is my mind?</div>
+			<NavBar theStyle={styles2} up="black" down="white"/>
+			<div className="main-container">
+
+            </div>
 		</div>
 	);
 }
 
 export default About;
+
 
