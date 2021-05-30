@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
 		justifyContent: 'center',
 		alignItems: 'center',
 		padding: theme.spacing(2),
-		
+
 		'& .MuiTextField-root': {
 			margin: theme.spacing(1),
 			width: '300px',
@@ -42,36 +42,36 @@ const LoginBox = ({ handleClose }) => {
 
 	return (
 		<form className={classes.root}>
-			<TextField 
-				label="First Name" 
-				variant="filled" 
+			<TextField
+				label="First Name"
+				variant="filled"
 				value={firstName}
-				required 
+				required
 				onChange={e=>setFirstName(e.target.value)}
 			/>
 
-			<TextField 
-				label="Last Name" 
-				variant="filled" 
+			<TextField
+				label="Last Name"
+				variant="filled"
 				value={lastName}
-				required 
+				required
 				onChange={e=>setLastName(e.target.value)}
 			/>
 
-			<TextField 
-				label="Email"	
-				variant="filled" 
+			<TextField
+				label="Email"
+				variant="filled"
 				value={email}
-				required 
+				required
 				onChange={e=>setEmail(e.target.value)}
 			/>
 
-			<TextField 
-				label="Password" 
-				type="password" 
+			<TextField
+				label="Password"
+				type="password"
 				variant="filled"
 				value={password}
-				required 
+				required
 				onChange={e=>setPassword(e.target.value)}
 			/>
 
@@ -86,3 +86,4 @@ const LoginBox = ({ handleClose }) => {
 }
 
 export default LoginBox;
+
