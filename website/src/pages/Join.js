@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
-import Background2 from '../components/Background2';
-import NavBar from '../components/NavBar';
-import {makeStyles} from '@material-ui/core/styles';
-import Login from '../components/Login';
-import Signin from '../components/Signin';
+import Background2 from '../comps/Background2';
+import NavBar from '../comps/NavBar';
+import Login from '../comps/Login';
+import Signin from '../comps/Signin';
+import styles1 from '../cssModules/NavBar.module.css';
 
 class Join extends Component {
 	render() {
 		return (
 			<div>
-				<Background2 />				
-				<NavBar />
+				<Background2 />
+				<NavBar theStyle={styles1} up="white" down="black"/>
 				<div className="login-container">
 					<Login />
 				</div>
@@ -23,4 +23,3 @@ class Join extends Component {
 };
 
 export default Join;
-
