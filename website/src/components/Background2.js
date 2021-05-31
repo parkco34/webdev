@@ -82,4 +82,3 @@ const BackgroundImage = props => {
 }
 
 export default withStyles(useStyles)(Background2);
-
