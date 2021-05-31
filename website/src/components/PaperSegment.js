@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import img1 from '../Images/robot2.webp';
-import img2 from'../Images/robot1.webp';
-import img3 from '../Images/robot3.webp';
+import img1 from '../myImages/robot2.webp';
+import img2 from'../myImages/robot1.webp';
+import img3 from '../myImages/robot3.webp';
 import ImageList from './ImageList.js';
+import './MandroidBB.css';
 
 const useStyles = makeStyles(theme => ({
 	root: {
@@ -25,13 +26,16 @@ const useStyles = makeStyles(theme => ({
 			width: theme.spacing(50),
 			height: theme.spacing(55),
 		},
+        '& .proper-text': {
+            textShadow: 'black 1px 0 30px',
+        }
 	},
 	toproot: {
 		display: 'flex',
         width: 'inherit',
         flex: 'wrap',
 		justifyContent: 'center',
-		fontFamily: 'Lucida Console',
+		fontFamily: 'MandroidBB',
 		gap: '2%',
 	},
 	paperHovered: {
@@ -61,7 +65,7 @@ const PaperSegment = () => {
 	});
 
 	const [clicked, setClicked] = useState(false);
-	
+
 	const handleOnClick = () => setClicked(!clicked);
 
 	return (
@@ -79,7 +83,7 @@ const PaperSegment = () => {
                         elevation={3}
                     >
                         <div>
-                            History
+                            <span className="proper-text">History</span>
                         </div>
                     </Paper>
                 </div>
@@ -95,7 +99,7 @@ const PaperSegment = () => {
                         elevation={3}
                     >
                         <div>
-                            Current
+                            <span className="proper-text">Current</span>
                         </div>
                     </Paper>
                 </div>
@@ -111,12 +115,12 @@ const PaperSegment = () => {
                         elevation={3}
                     >
                         <div>
-                            Future
+                            <span className="proper-text">Future</span>
                         </div>
                     </Paper>
                 </div>
             </section>
-			{clicked && 
+			{clicked &&
 				<section className={classes.toproot}>
 					<ImageList />
 				</section>
@@ -126,3 +130,4 @@ const PaperSegment = () => {
 }
 
 export default PaperSegment;
+
