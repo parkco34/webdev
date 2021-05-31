@@ -1,7 +1,7 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import NavBar from '../comps/NavBar';
-import styles2 from '../cssModules/NavBar2.module.css';
+import styles1 from '../cssModules/NavBar.module.css';
 
 const useStyles = makeStyles({
 	root: {
@@ -13,7 +13,7 @@ const useStyles = makeStyles({
 function About() {
     return (
 		<div>
-			<NavBar theStyle={styles2} up="black" down="white"/>
+			<NavBar theStyle={styles1} up="white" down="black"/>
 			<div className="main-container">
 
             </div>
