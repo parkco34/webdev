@@ -1,0 +1,49 @@
+.the-social {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-sub-container {
+    background: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+a.social {
+    margin: 0 3.3rem;
+    transition: transform 250ms;
+}
+
+a.social:hover {
+    transform: translateY(-2px);
+}
+
+a.youtube {
+    color: #eb3223;
+}
+
+a.facebook {
+    color: #4968ad;
+}
+
+a.twitter {
+    color: #49a1eb;
+}
+
+a.instagram {
+    color: black;
+}
+
+.spacer {
+    height: 73px;
+    width: 100vw;
+}
+
+.sub-container {
+    position: absolute;
+    margin-left: 15%;
+}
