@@ -8,7 +8,7 @@ import styles1 from '../cssModules/NavBar.module.css';
 function Home() {
     return (
 		<div style={{overflow: 'hidden'}}className="backgroundContainer">
-            <NavBar theStyle={styles1} up="white" down="black"/>
+            		<NavBar theStyle={styles1} up="white" down="black"/>
 			<Background />
 			<MainContent />
 			<TheFooter />
