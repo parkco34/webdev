@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
 		lineHeight: '10',
 		padding: '3%',
 		color: 'white',
-		fontSize: '56px',
+		fontSize: '54px',
 		height: 'inherit',
 		margin: 'auto',
 		flexWrap: 'wrap',
