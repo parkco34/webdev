@@ -11,7 +11,7 @@ function Home() {
             <NavBar theStyle={styles1} up="white" down="black"/>
 			<Background />
 			<MainContent />
-            <TheFooter />
+			<TheFooter />
 		</div>
     );
 }
