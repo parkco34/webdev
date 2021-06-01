@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import img1 from '../Images/robot2.webp';
-import img2 from'../Images/robot1.webp';
-import img3 from '../Images/robot3.webp';
+import img1 from '../myImages/robot2.webp';
+import img2 from'../myImages/robot1.webp';
+import img3 from '../myImages/robot3.webp';
 import ImageList from './ImageList.js';
 import './MandroidBB.css';
 
@@ -84,7 +84,7 @@ const PaperSegment = () => {
                         elevation={3}
                     >
                         <div>
-                            <span className="proper-text">History</span>
+                            <span className="proper-text">Images</span>
                         </div>
                     </Paper>
                 </div>
@@ -100,7 +100,7 @@ const PaperSegment = () => {
                         elevation={3}
                     >
                         <div>
-                            <span className="proper-text">Current</span>
+                            <span className="proper-text">Something1</span>
                         </div>
                     </Paper>
                 </div>
@@ -116,7 +116,7 @@ const PaperSegment = () => {
                         elevation={3}
                     >
                         <div>
-                            <span className="proper-text">Future</span>
+                            <span className="proper-text">Something2</span>
                         </div>
                     </Paper>
                 </div>
