@@ -3,9 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from '../pages/Home';
 import About from '../pages/About';
 import Join from '../pages/Join';
+import Intro from '../mainpage/Intro.js';
 import NoMatch from '../pages/NoMatch';
-import MainContent from './MainContent';
-import Background from './Background';
 
 function App() {
     return (
@@ -15,6 +14,7 @@ function App() {
                     <Route exact path="/" component={ Home } />
                     <Route exact path="/about" component={ About } />
                     <Route exact path="/join" component={ Join } />
+                    <Route exact path="/intro" component={ Intro } />
                     <Route component={ NoMatch } />
                 </Switch>
             </Router>
