@@ -89,6 +89,21 @@ class NavBar extends React.Component {
                     >
                         Join
                     </span></Link>
+
+                    <Link to="/intro"><span
+                                        style={{
+                                            color:
+                                            this.state.status === "up" ?
+                                            this.props.up : this.props.down
+                                        }}
+                                        className={
+                                            this.state.status === "up" ?
+                                            this.props.theStyle.navbtn1 :
+                                            this.props.theStyle.navbtn2
+                                        }
+                    >
+                        Intro
+                    </span></Link>
                 </div>
             </div>
         );
