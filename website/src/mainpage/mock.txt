@@ -1,0 +1,33 @@
+=> Intro.js /\/\\/\/\/\\/\/\/\/\/\//\/\\/\/\/\\/\/\/\/\/\//\/\\/\/\/\\/\/\/\/\/\/
+
+- 2 Components: Carousel and CarouselItem
+- Carousel is the main controller for controlling the images
+- CarouselItem component renders the item itself, but we pass the width
+  property to it for the moment.
+- Controlling the active item is done using "transform: translateX" for the
+  div.inner.
+- Iterate all the children and adjust the width property.
+    ~ fixing the width to 100% means only one item will be visible.
+
+React.Children.map = Invokes function on immediate child contained within
+    Children /w 'this' set to 'thisArg'.
+React.cloneElement(element, [props], [...children]) = Clones and returns a bew
+    React element as a starting point.
+
+
+=> Intro.js:
+    - Navbar = Contains nav clickable navlinks.
+        ~ Nav.js:
+            - 
+
+    - Background = Contains background image(s) carousel.
+        ~ BackgroundImage.js:
+            div.carousel = hidden-overflow container
+
+    - Carousel = Images being cycled thru upon rendering.
+        ~ Carousel.js:
+            div.carousel = hidden-overflow
+                div.inner = move items around
+        
+        ~ CarouselItem.js:
+            div.carouselItem = individual items
