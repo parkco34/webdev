@@ -1,4 +1,7 @@
-=> Intro.js /\/\\/\/\/\\/\/\/\/\/\//\/\\/\/\/\\/\/\/\/\/\//\/\\/\/\/\\/\/\/\/\/\/
+= Intro.js /\/\\/\/\/\\/\/\/\/\/\//\/\\/\/\/\\/\/\/\/\/\//\/\\/\/\/\\/\/\/\/\/\/
+
+=> The carousel slide show is for cycling through a series of content, built with CSS 3D transforms and JavaScript, working with a series of images, text, or custom markup.
+	It includes support for previous/next controls and indicators...
 
 - 2 Components: Carousel and CarouselItem
 - Carousel is the main controller for controlling the images
@@ -31,3 +34,70 @@ React.cloneElement(element, [props], [...children]) = Clones and returns a bew
         
         ~ CarouselItem.js:
             div.carouselItem = individual items
+
+=> Automatic Sliding of Carousel:
+useEffect():
+	- setInterval() to slide after a certain amount of time...
+	- Returns clearInterval(), if the variable, 'interval', is true.
+
+=> Slider on mouse hover and pause slider:
+ --> Keeping the interval running, have state check if user is hovering over carousel:
+useState(false):
+	- Whether carousel is paused or not.
+
+useEffect():
+	- if !paused updateIndex(+1), otherwise keep it movin...
+
+onMouseEnter={setPaused(true)}
+onMouseLeave={setPause(false)}
+
+=> Swiping on mobile devices:
+- Using the library: react-swipeable
+useSwipeable():
+	- left: updateIndex(activeIndex+1)
+	- right: updateIndex(activeIndex-1)
+	- <div {...hanlders} </div>
+
+The last step
+You may notice that we still have some steps to improve the carousel better but we’re done with the major things so I’ll let you do it by yourself to ensure you understand deeply the solution. Here is the list you can improve:
+Display 2 active items (50% width each item)
+Display number of active items dynamically by passing the prop to Carousel component
+Add the background image for CarouselItem component
+Advance: Display apart of the next item while swiping on mobile device
+If you’re interested with any item in the list but you get trouble or anything you don’t understand, just let me know in the comment section.
+
+==>> Try this:
+function fit_to_screen()
+{
+    img.removeAttribute("style");
+    var winX = window.innerWidth + "px";
+    var winY = window.innerHeight + "px";
+    var vbar = false;
+    if (document.body.scrollHeight > document.body.clientHeight) // vertical scrollbar
+    {
+            img.style.height = winY;
+            vbar = true;
+    }
+    if (document.body.scrollWidth > document.body.clientWidth) // horizontal scrollbar
+    {
+            if (vbar) // both scrollbars
+            {
+                    if ((document.body.scrollHeight - document.body.clientHeight) > (document.body.scrollWidth - document.body.clientWidth)) // let's see which one is bigger
+                    {
+                            img.removeAttribute("style");
+                            img.style.height = winY;
+                    }
+                    else
+                    {
+                            img.removeAttribute("style");
+                            img.style.width = winX;
+                    }
+            }
+            else
+            {
+                    img.removeAttribute("style");
+                    img.style.width = winX;
+            }
+    }
+}
+
