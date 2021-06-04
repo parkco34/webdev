@@ -1,9 +1,12 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
+import {useSwipeable} from 'react-swipeable';
+import MandroidBb from '../components/MandroidBB.css';
 
 const useStyles = makeStyles({
 	root: {
 		overflow: 'hidden',
+		fontFamily: 'MandroidBB',
 
 		'& .inner': {
 			whiteSpace: 'nowrap',
@@ -23,6 +26,12 @@ const useStyles = makeStyles({
 		},
 		'& .indicators > button': {
 			margin: '5px',
+			fontFamily: 'MandroidBB',
+		},
+		'& .indicators > button.active': {
+			backgroundColor: 'green',
+			color: 'white',
+			fontWeight: 'bold',
 		},
 	},
 });
@@ -38,6 +47,21 @@ export const CarouselItem = ({children, width}) => {
 const Carousel = ({children}) => {
 	const classes = useStyles();
 	const [activeIndex, setActiveIndex] = useState(0);
+	const [paused, setPaused] = useState(false);
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			if (!paused) {
+				updateIndex(activeIndex + 1);
+			}
+		}, 1000);
+
+		return () => {
+			if (interval) {
+				clearInterval(interval);
+			}
+		}
+	});
 
 	const updateIndex = newIndex => {
 		if (newIndex < 0) {
@@ -50,8 +74,18 @@ const Carousel = ({children}) => {
 		setActiveIndex(newIndex);
 	}
 
+	const handlers = useSwipeable({
+		onSwipedLeft: () => updateIndex(activeIndex + 1),
+		onSwipedRight: () => updateIndex(activeIndex - 1)
+	});
+
 	return (
-		<div className={classes.root}>
+		<div 
+			{...handlers}
+			className={classes.root}
+			onMouseEnter={()=>setPaused(true)}
+			onMouseLeave={()=>setPaused(false)}
+		>
 			<div>
 				<div className="inner" style={{transform: `translateX(-${activeIndex * 100}%)`}}>
 					{React.Children.map(children, (child, index) => {
@@ -63,6 +97,16 @@ const Carousel = ({children}) => {
 					<button onClick={()=>{updateIndex(activeIndex - 1);}}>
 						PREV
 					</button>
+						{React.Children.map(children, (child, index) => {
+							return (
+								<button 
+									className={`${index === activeIndex ? "active" : ""}`}
+									onClick={()=>updateIndex(index)}
+								>
+									{index + 1}
+								</button>
+							);
+						})}
 					<button onClick={()=>{updateIndex(activeIndex + 1);}}>
 						NEXT
 					</button>
