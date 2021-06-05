@@ -23,7 +23,7 @@ class Login extends Component {
 
 	render() {
 		return (
-			<div className="Login">
+			<div className="Signin">
 				<Button variant="contained" color="primary" onClick={this.handleOpen} style={{zIndex: '2'}}>
 					Signup
 				</Button>
@@ -35,4 +35,3 @@ class Login extends Component {
 };
 
 export default Login;
-
