@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
 		lineHeight: '10',
 		padding: '3%',
 		color: 'white',
-		fontSize: '54px',
+		fontSize: '56px',
 		height: 'inherit',
 		margin: 'auto',
 		flexWrap: 'wrap',
@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
 	},
 	paperHovered: {
 		transition: "transform 0.37s ease-in-out",
-		transform: "translate(0px, 50px)",
+		transform: "scale(1.1)",
 	},
 }));
 
