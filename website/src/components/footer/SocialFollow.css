@@ -1,5 +1,16 @@
-.the-social {
+.social-container {
+    position: relative;
     margin: 0 auto;
+    text-align: center;
+    padding: 20px 0;
+    text-transform: uppercase;
+    color: #979797;
+    font: 12px/18px "D-DIN-Bold", "Arial", "Verdana", "sans-serif";
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.the-social {
+   margin: 0 auto;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -39,7 +50,6 @@ a.instagram {
 }
 
 .spacer {
-    height: 73px;
     width: 100vw;
 }
 
