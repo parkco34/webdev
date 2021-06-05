@@ -24,7 +24,7 @@ class Login extends Component {
 	render() {
 		return (
 			<div className="Login">
-				<Button variant="contained" color="primary" onClick={this.handleOpen}>
+				<Button variant="contained" color="primary" onClick={this.handleOpen} style={{zIndex: '2'}}>
 					Signup
 				</Button>
 
