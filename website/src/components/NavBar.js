@@ -43,6 +43,7 @@ class NavBar extends React.Component {
                         "transparent" : "white",
                         position: "fixed",
                         transition: "all 0.5s",
+                        zIndex: '1',
             }}>
                 <div className={this.props.theStyle.navbar}>
                     <span className={this.props.theStyle.signature} ><img src={universe} id="Nav-logo"/></span>
