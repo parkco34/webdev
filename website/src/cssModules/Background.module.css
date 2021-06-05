@@ -8,10 +8,11 @@
     flex-direction: column;
     justify-content: flex-start; /* default */
     width: inherit;
-    height: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% center;
+    max-height: 100vh;
+    height: 100vh;
 }
 
 @media (min-width: 650px) {
@@ -19,7 +20,6 @@
         background-position: center center;
     }
 }
-
 
 
 
