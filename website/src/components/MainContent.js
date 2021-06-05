@@ -6,6 +6,16 @@ import PaperSegment from './PaperSegment';
 import LearningSegment from './LearningSegment';
 import './MandroidBB.css';
 
+
+//<div className={classes.title}>
+//    <Typography variant='h6' style={{fontFamily: 'MandroidBB', fontSize: '48px', fontWeight: 'bold'}}>IT MUST BE IN THE WATER</Typography>
+//</div>
+//<div className={classes.content}>
+//    <Typography className={classes.content}>
+//        "The surest way to corrupt a youth is to instruct him to hold in higher esteem those who think alike than those who think differently."
+//    </Typography>
+//</div>
+
 const useStyles = makeStyles(thingy => ({
 	toolbar: thingy.mixins.toolbar,
 	title: {
@@ -41,17 +51,7 @@ function MainContent() {
         <div className="MainContent">
             <section className={classes.fullWidth}>
                 <div className="spacer" />
-                <Divider style={{background: 'white'}}/>
-                <div className={classes.title}>
-                    <Typography variant='h6' style={{fontFamily: 'MandroidBB', fontSize: '48px', fontWeight: 'bold'}}>IT MUST BE IN THE WATER</Typography>
-                </div>
                 <div className={classes.content}>
-                    <Typography className={classes.content}>
-                        "The surest way to corrupt a youth is to instruct him to hold in higher esteem those who think alike than those who think differently."
-                    </Typography>
-                </div>
-                <div className={classes.content}>
-                    <PaperSegment />
                 </div>
             </section>
             <div className="spacer" style={{height: '50px'}}/>
@@ -78,3 +78,5 @@ function MainContent() {
 }
 
 export default MainContent;
+
+
