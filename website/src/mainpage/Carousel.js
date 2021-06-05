@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import {useSwipeable} from 'react-swipeable';
-import MandroidBb from '../components/MandroidBB.css';
+import MandroidBb from '../comps/MandroidBB.css';
+import NavBar from '../comps/NavBar';
+import styles1 from '../cssModules/NavBar.module.css';
 
 const useStyles = makeStyles({
 	root: {
@@ -17,7 +19,6 @@ const useStyles = makeStyles({
 			alignItems: 'center',
 			justifyContent: 'center',
 			height: '100vh',
-			backgroundColor: 'green',
 			color: 'white',
 		},
 		'& .indicators': {
@@ -54,11 +55,12 @@ const Carousel = ({children}) => {
 			if (!paused) {
 				updateIndex(activeIndex + 1);
 			}
-		}, 1000);
+		}, 10000);
 
 		return () => {
 			if (interval) {
 				clearInterval(interval);
+                console.log(paused, " ", interval);
 			}
 		}
 	});
@@ -80,12 +82,13 @@ const Carousel = ({children}) => {
 	});
 
 	return (
-		<div 
+		<div
 			{...handlers}
 			className={classes.root}
 			onMouseEnter={()=>setPaused(true)}
 			onMouseLeave={()=>setPaused(false)}
 		>
+        <NavBar theStyle={styles1} up="white" down="black" />
 			<div>
 				<div className="inner" style={{transform: `translateX(-${activeIndex * 100}%)`}}>
 					{React.Children.map(children, (child, index) => {
@@ -99,7 +102,7 @@ const Carousel = ({children}) => {
 					</button>
 						{React.Children.map(children, (child, index) => {
 							return (
-								<button 
+								<button
 									className={`${index === activeIndex ? "active" : ""}`}
 									onClick={()=>updateIndex(index)}
 								>
@@ -117,3 +120,4 @@ const Carousel = ({children}) => {
 };
 
 export default Carousel;
+
