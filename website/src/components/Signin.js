@@ -8,6 +8,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogActions from '@material-ui/core/DialogActions';
 import {withStyles} from '@material-ui/core/styles';
 import LoginButton from './clicks/LoginButton';
+import Login from './Login';
 import './MandroidBB.css';
 
 const styles = theme => ({
@@ -29,6 +30,16 @@ const styles = theme => ({
         '& .submit-btn': {
             fontSize: 'calc(10px + 2vmin)'
         },
+        '& .register': {
+            display: 'flex',
+            color: 'black',
+            textDecoration: 'underline',
+            zIndex: '0',
+            fontSize: '15px',
+        },
+        '& a:link, a:visited': {
+            color: 'grey',
+        },
 	},
 });
 
@@ -40,6 +51,7 @@ class Signin extends Component {
             password: "",
             message: "",
             open: false,
+            member: true,
         };
     }
 
@@ -55,9 +67,11 @@ class Signin extends Component {
         });
     };
 
-    entre = () => {
-        // Something goes here
-    }
+    handleMember = () => {
+        this.setState({
+            member: true
+        });
+    };
 
     handleClose = () => {
         this.setState({
@@ -93,8 +107,15 @@ class Signin extends Component {
                         />
 
                         <button style={{fontFamily: 'MandroidBB'}} type="button" className="submit-btn">
-                            <LoginButton title="Submit" />
+                            {this.state.member ? (
+                                <LoginButton title="Submit" />
+                            ) : (
+                                <Signin />
+                            )}
                         </button>
+                        <div className="register">
+                            <span id="register-link"><a href="#" onClick={this.handleMember}>Not a Member?</a></span>
+                        </div>
                     </form>
 
                     <Dialog
