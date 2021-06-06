@@ -11,9 +11,6 @@ class Join extends Component {
 			<div>
 				<Background2 />
 				<NavBar theStyle={styles1} up="white" down="black"/>
-				<div className="login-container">
-					<Login />
-				</div>
 				<div className="signin-container">
 					<Signin />
 				</div>
@@ -23,3 +20,5 @@ class Join extends Component {
 };
 
 export default Join;
+
+
