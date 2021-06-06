@@ -41,47 +41,49 @@ const LoginBox = ({ handleClose }) => {
 	};
 
 	return (
-		<form className={classes.root}>
-			<TextField
-				label="First Name"
-				variant="filled"
-				value={firstName}
-				required
-				onChange={e=>setFirstName(e.target.value)}
-			/>
+        <div className="loginbox-form">
+            <form className={classes.root}>
+                <TextField
+                    label="First Name"
+                    variant="filled"
+                    value={firstName}
+                    required
+                    onChange={e=>setFirstName(e.target.value)}
+                />
 
-			<TextField
-				label="Last Name"
-				variant="filled"
-				value={lastName}
-				required
-				onChange={e=>setLastName(e.target.value)}
-			/>
+                <TextField
+                    label="Last Name"
+                    variant="filled"
+                    value={lastName}
+                    required
+                    onChange={e=>setLastName(e.target.value)}
+                />
 
-			<TextField
-				label="Email"
-				variant="filled"
-				value={email}
-				required
-				onChange={e=>setEmail(e.target.value)}
-			/>
+                <TextField
+                    label="Email"
+                    variant="filled"
+                    value={email}
+                    required
+                    onChange={e=>setEmail(e.target.value)}
+                />
 
-			<TextField
-				label="Password"
-				type="password"
-				variant="filled"
-				value={password}
-				required
-				onChange={e=>setPassword(e.target.value)}
-			/>
+                <TextField
+                    label="Password"
+                    type="password"
+                    variant="filled"
+                    value={password}
+                    required
+                    onChange={e=>setPassword(e.target.value)}
+                />
 
-			<div>
-				<Button variant="contained" onClick={handleClose}>Cancel</Button>
-				<Button type="submit" variant="contained" style={{backgroundColor: '#2d6bcf', color: 'white'}} >
-					Signup
-				</Button>
-			</div>
-		</form>
+                <div>
+                    <Button variant="contained" onClick={handleClose}>Cancel</Button>
+                    <Button type="submit" variant="contained" style={{backgroundColor: '#2d6bcf', color: 'white'}} >
+                        Signup1
+                    </Button>
+                </div>
+            </form>
+        </div>
 	);
 }
 
