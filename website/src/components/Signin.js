@@ -57,7 +57,7 @@ const styles = theme => ({
 			cursor: 'pointer',
 		},
 		'& .disappear': {
-			display: 'none',
+            visibility: 'hidden',
 		},
 	},
 });
@@ -76,7 +76,7 @@ class Signin extends Component {
             message: "",
             open: false,
             member: true,
-        };	
+        };
     }
 
     setEmail = event => {
@@ -176,4 +176,5 @@ class Signin extends Component {
 }
 
 export default withStyles(styles, {withTheme: true})(Signin);
+
 
