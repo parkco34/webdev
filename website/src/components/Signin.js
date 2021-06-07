@@ -37,6 +37,9 @@ const styles = theme => ({
             zIndex: '0',
             fontSize: '15px',
         },
+        '& .register-link': {
+            zINdex: '0',
+        },
         '& a:link, a:visited': {
             color: 'grey',
         },
@@ -69,7 +72,7 @@ class Signin extends Component {
 
     handleMember = () => {
         this.setState({
-            member: true
+            member: false
         });
     };
 
@@ -81,6 +84,15 @@ class Signin extends Component {
 
     render() {
 		const {classes} = this.props;
+        const isMember = this.state.member;
+
+        let button;
+        if (isMember) {
+            button = <LoginButton title="Submit" />;
+        }
+        else {
+            button = <Login />;
+        }
 
         return (
             <div className="signin-container">
@@ -105,17 +117,17 @@ class Signin extends Component {
                             value={this.state.password}
                             style={{fontFamily: 'MandroidBB'}}
                         />
-
-                        <button style={{fontFamily: 'MandroidBB'}} type="button" className="submit-btn">
-                            {this.state.member ? (
-                                <LoginButton title="Submit" />
-                            ) : (
-                                <Signin />
-                            )}
+                        <button className="submit-btn" style={{fontFamily: "MandroidBB"}}>
+                            {button}
                         </button>
-                        <div className="register">
-                            <span id="register-link"><a href="#" onClick={this.handleMember}>Not a Member?</a></span>
-                        </div>
+                        <a
+                            href="#"
+                            onClick={this.handleMember, console.log("The state of member is: ", this.state.member)}
+                        >
+                            <span id="register-link">
+                                    Not a Member?
+                            </span>
+                        </a>
                     </form>
 
                     <Dialog
