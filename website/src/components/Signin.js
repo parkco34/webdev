@@ -17,19 +17,21 @@ const styles = theme => ({
 		flexDirection: 'column',
 		alignItems: 'center',
 		justifyContent: 'center',
-		fontSize: 'calc(10px + 2vmin)',
 
 		'& .signin': {
 			display: 'flex',
 			flexDirection: 'column',
 			alignItems: 'center',
 			jusfityContent: 'center',
-			fontSize: 'calc(10px + 2vmin)',
 			margin: '15%',
 		},
         '& .submit-btn': {
-            fontSize: 'calc(10px + 2vmin)'
+            fontSize: 'calc(10px + 2vmin)',
+			padding: '10px 10px 20px 10px',
         },
+		'& .submit-btn:hover': {
+			cursor: 'pointer',
+		},
         '& .register': {
             display: 'flex',
             color: 'black',
@@ -42,20 +44,39 @@ const styles = theme => ({
         },
         '& a:link, a:visited': {
             color: 'grey',
+			zIndex: '0',
+			textDecoration: 'underline',
         },
+		'& .member': {
+			zIndex: '0',
+			textDecoration: 'underline',
+			color: 'grey',
+			cursor: 'pointer',
+		},
+		'& .member:hover': {
+			cursor: 'pointer',
+		},
+		'& .disappear': {
+			display: 'none',
+		},
 	},
 });
 
 class Signin extends Component {
     constructor(props) {
         super(props);
+		this.handleMember = this.handleMember.bind(this);
+		this.setEmail = this.setEmail.bind(this);
+		this.setPassword = this.setPassword.bind(this);
+		this.handleClose = this.handleClose.bind(this);
+
         this.state = {
             email: "",
             password: "",
             message: "",
             open: false,
             member: true,
-        };
+        };	
     }
 
     setEmail = event => {
@@ -72,7 +93,7 @@ class Signin extends Component {
 
     handleMember = () => {
         this.setState({
-            member: false
+            member: !this.state.member
         });
     };
 
@@ -99,6 +120,7 @@ class Signin extends Component {
                 <header className={classes.root}>
                     <form className="signin">
                         <TextField
+							className={this.state.member ? "" : "disappear"}
                             variant="standard"
                             placeholder="Email"
                             margin="normal"
@@ -109,6 +131,7 @@ class Signin extends Component {
                         />
 
                         <TextField
+							className={this.state.member ? "" : "disappear"}
                             variant="standard"
                             placeholder="Password"
                             margin="normal"
@@ -117,17 +140,15 @@ class Signin extends Component {
                             value={this.state.password}
                             style={{fontFamily: 'MandroidBB'}}
                         />
-                        <button className="submit-btn" style={{fontFamily: "MandroidBB"}}>
+                        <button type="button" className="submit-btn" style={{fontFamily: "MandroidBB"}}>
                             {button}
                         </button>
-                        <a
-                            href="#"
-                            onClick={this.handleMember, console.log("The state of member is: ", this.state.member)}
+                        <div
+							className="member"
+                            onClick={this.handleMember}
                         >
-                            <span id="register-link">
-                                    Not a Member?
-                            </span>
-                        </a>
+							{this.state.member ? "Not a Member?" : "Signin"}
+                        </div>
                     </form>
 
                     <Dialog
