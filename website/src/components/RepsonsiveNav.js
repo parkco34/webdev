@@ -27,14 +27,14 @@ const Navigation = styled.header`
 
 	.fa-bars {
 		display: none;
-		color: #222;
+		color: green;
 		font-size: 2rem;
 	}
 	nav {
 		position: fixed;
 		background-color: transparent;
 		display: flex;
-		margin: 0 60%;
+		margin: 0 45%;
 
 		ul {
 			display: flex;
@@ -52,7 +52,7 @@ const Navigation = styled.header`
 			}
 		}
 		a.active {
-			color: #222;
+			color: black;
 		}
 	}
 
@@ -62,6 +62,7 @@ const Navigation = styled.header`
 		opacity: 0.55;
 		transition: all 0.6s;
 		font-size: 1em;
+        list-style-type: none;
 	}
 	.navbtn1:after {
 		content: "";
@@ -69,8 +70,8 @@ const Navigation = styled.header`
 		right: 0;
 		width: 0;
 		bottom: -5px;
-		background: white;
-		height: 7px;
+		background: #222;
+		height: 3px;
 		transition-property: width;
 		transition-duration: 0.3s;
 		transition-timing-function: ease-out;
@@ -83,12 +84,13 @@ const Navigation = styled.header`
 		right: auto;
 		width: 100%;
 		opacity: 1;
-		color: black;
+		color: green;
 	}
 
 	.navbtn2 {
 		position: relative;
 		color: black;
+        list-style-type: none;
 	}
 
 	.navbtn2:after {
@@ -98,7 +100,7 @@ const Navigation = styled.header`
 		width: 0;
 		bottom: -5px;
 		background: black;
-		height: 4px;
+		height: 3px;
 		transition-property: width;
 		transition-duration: 0.3s;
 		transition-timing-function: ease-out;
@@ -110,6 +112,7 @@ const Navigation = styled.header`
 		left: 0;
 		right: auto;
 		width: 100%;
+        color: black;
 	}
 
     @media only screen and (max-width: 800px) {
@@ -183,12 +186,34 @@ const ResponsiveNav = props => {
 					</NavLink>
 
 					<NavLink activeClassName="active" to="/about">
-						<li>About</li>
+						<li
+							className={
+								colorChange ? 'navbtn2' : 'navbtn1'
+							}
+						>
+                        About
+                        </li>
 					</NavLink>
 
 					<NavLink activeClassName="active" to="/join">
-						<li>Join</li>
+						<li
+							className={
+								colorChange ? 'navbtn2' : 'navbtn1'
+							}
+						>
+                        Join
+                        </li>
 					</NavLink>
+
+                    <NavLink activeClassName="active" to="/goal">
+						<li
+							className={
+								colorChange ? 'navbtn2' : 'navbtn1'
+							}
+						>
+                        Goal
+                        </li>
+                    </NavLink>
 				</ul>
 			</nav>
 		</Navigation>
@@ -196,4 +221,5 @@ const ResponsiveNav = props => {
 }
 
 export default ResponsiveNav;
+
 
