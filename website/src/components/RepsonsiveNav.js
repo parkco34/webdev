@@ -11,7 +11,6 @@ const Navigation = styled.header`
 	padding: 0px 100px 0;
 	height: 100px;
 	margin-bottom: 60px;
-	background: #f8f8f8f;
     font-family: MandroidBB;
 
     em {
@@ -26,40 +25,91 @@ const Navigation = styled.header`
 		}
 	}
 
-	a {
-		color: #222;
-		opacity: 0.55;
-		transition: all 0.6s;
-		font-size: 1em;
-	}
-
-	a:hover {
-		opacity: 1;
-	}
 	.fa-bars {
 		display: none;
 		color: #222;
 		font-size: 2rem;
 	}
 	nav {
+		position: fixed;
+		background-color: transparent;
+		display: flex;
+		margin: 0 60%;
+
 		ul {
 			display: flex;
+			flex-direction: row;
 			justify-content: space-between;
 		}
 		li {
 			margin: 0 45px;
-			jusfity-content: space-between;
+			justify-content: space-between;
 		}
 		a {
 			font-size: 1em;
 			text-decoration: none;
 			.active {
-				color: tomato;
 			}
 		}
 		a.active {
 			color: #222;
 		}
+	}
+
+	.navbtn1 {
+		position: relative;
+		color: #222;
+		opacity: 0.55;
+		transition: all 0.6s;
+		font-size: 1em;
+	}
+	.navbtn1:after {
+		content: "";
+		position: absolute;
+		right: 0;
+		width: 0;
+		bottom: -5px;
+		background: white;
+		height: 7px;
+		transition-property: width;
+		transition-duration: 0.3s;
+		transition-timing-function: ease-out;
+	}
+
+	.navbtn1:hover:after,
+	.navbtn1:focus:after,
+	.navbtn1:active:after {
+		left: 0;
+		right: auto;
+		width: 100%;
+		opacity: 1;
+		color: black;
+	}
+
+	.navbtn2 {
+		position: relative;
+		color: black;
+	}
+
+	.navbtn2:after {
+		content: "";
+		position: absolute;
+		right: 0;
+		width: 0;
+		bottom: -5px;
+		background: black;
+		height: 4px;
+		transition-property: width;
+		transition-duration: 0.3s;
+		transition-timing-function: ease-out;
+	}
+
+	.navbtn2:hover:after,
+	.navbtn2:focus:after,
+	.navbtn2:active:after {
+		left: 0;
+		right: auto;
+		width: 100%;
 	}
 
     @media only screen and (max-width: 800px) {
@@ -86,26 +136,20 @@ const Navigation = styled.header`
     }
 `
 
-const ResponsiveNav = () => {
+const ResponsiveNav = props => {
 	const [expand, setExpand] = useState(false);
-    const [scrollStatus, setScrollStatus] = useState("up");
+	const [colorChange, setColorChange] = useState(false);
 
-    useEffect(() => {
-        const listener = document.addEventListener("scroll", e => {
-            const scrolled = document.scrollingElement.scrollTop;
+	const changeNavbarColor = () => {
+		if (window.scrollY >= 120) {
+			setColorChange(true);
+		}
+		else {
+			setColorChange(false);
+		}
+	};
 
-            if (scrolled >= 120) {
-                if (scrollStatus !== "down") {
-                    setScrollStatus("down");
-                }
-            }
-            else {
-                if (scrollStatus !== "up") {
-                    setScrollStatus("up");
-                }
-            }
-        });
-    }, []);
+	window.addEventListener('scroll', changeNavbarColor);
 
 	const handleToggle = e => {
 		e.preventDefault();
@@ -130,12 +174,10 @@ const ResponsiveNav = () => {
 				<ul className={`collapsed ${expand ? "expanded" : ""}`}>
 					<NavLink activeClassName="active" to="/">
 						<li
-                            style={{
-                                color:
-                                scrollStatus === "up" ?
-                                props.up : props.down
-                            }}
-                        >
+							className={
+								colorChange ? 'navbtn2' : 'navbtn1'
+							}
+						>
                             Home
                         </li>
 					</NavLink>
