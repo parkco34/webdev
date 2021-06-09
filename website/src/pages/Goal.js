@@ -1,24 +1,24 @@
 import React, {useState} from 'react';
-import theImage from '../myImages/misc1.jpg';
+import theImage from '../myImages/subImages/misc1.jpg';
 import ResponsiveNav from '../comps/ResponsiveNav.js';
 
 const Goal = props => {
     return (
         <div style={{backgroundColor: 'white', color: 'black', width: '100vw', height: '100%'}}>
-            <section className="sxn">
+            <section className="sxn" style={{backgroundImage: `url(${theImage})`}}>
                 <ResponsiveNav scrollingDownColor="blue" scrollingUpColor="green"/>
             </section>
             <section>
                 <div className="sxn2-container">
-					<p className="paragraph" style={{margin: '0 auto', padding: '0 50px'}}>“For those who believe in God, most of the big questions are answered. But for those of us who can't readily accept 
-						the God formula, the big answers don't remain stone-written. We adjust to new conditions and discoveries. We are pliable. 
-						Love need not be a command nor faith a dictum. I am my own god. We are here to unlearn the teachings of the church, state, 
-						and our educational system. We are here to drink beer. We are here to kill war. We are here to laugh at the odds and live our 
+					<p className="paragraph" style={{margin: '0 auto', padding: '0 50px'}}>“For those who believe in God, most of the big questions are answered. But for those of us who can't readily accept
+						the God formula, the big answers don't remain stone-written. We adjust to new conditions and discoveries. We are pliable.
+						Love need not be a command nor faith a dictum. I am my own god. We are here to unlearn the teachings of the church, state,
+						and our educational system. We are here to drink beer. We are here to kill war. We are here to laugh at the odds and live our
 						lives so well that Death will tremble to take us.”</p>
 					<br/>
 					<p className="paragraph" style={{margin: '0 auto', padding: '0 50px'}}>“what matters most is how well you walk through the fire”</p>
 					<br/>
-					<p className="paragraph" style={{margin: '0 auto', padding: '0 50px'}}>“That's the problem with drinking, I thought, as I poured myself a drink. If something bad happens you drink in an attempt to 
+					<p className="paragraph" style={{margin: '0 auto', padding: '0 50px'}}>“That's the problem with drinking, I thought, as I poured myself a drink. If something bad happens you drink in an attempt to
 						forget; if something good happens you drink in order to celebrate; and if nothing happens you drink to make something happen.”</p>
 					<br/>
 					<p className="paragraph" style={{margin: '0 auto', padding: '0 50px'}}>The true man wants two things: danger and play. For that reason he wants woman, as the most dangerous plaything.</p>
@@ -51,7 +51,7 @@ Kant argues that mathematics and the principles of science contain synthetic a p
 
 The fact that we are capable of synthetic a priori knowledge suggests that pure reason is capable of knowing important truths. However, Kant does not follow rationalist metaphysics in asserting that pure reason has the power to grasp the mysteries of the universe. Instead, he suggests that much of what we consider to be reality is shaped by the perceiving mind. The mind, according to Kant, does not passively receive information provided by the senses. Rather, it actively shapes and makes sense of that information. If all the events in our experience take place in time, that is because our mind arranges sensory experience in a temporal progression, and if we perceive that some events cause other events, that is because our mind makes sense of events in terms of cause and effect. Kant’s argument has a certain parallel to the fact that a person wearing blue-tinted sunglasses sees everything in a bluish light: according to Kant, the mind wears unremovable time-tinted and causation-tinted sunglasses, so that all our experience necessarily takes place in time and obeys the laws of causation.
 
-Time and space, Kant argues, are pure intuitions of our faculty of sensibility, and concepts of physics such as causation and inertia are pure intuitions of our faculty of understanding. Sensory experience only makes sense because our faculty of sensibility processes it, organizing it according to our intuitions of time and space. These intuitions are the source of mathematics: our number sense comes from our intuition of successive moments in time, and geometry comes from our intuition of space. Events that take place in space and time would still be a meaningless jumble if it were not for our faculty of understanding, which organizes experience according to the concepts, like causation, which form the principles of natural science.	
+Time and space, Kant argues, are pure intuitions of our faculty of sensibility, and concepts of physics such as causation and inertia are pure intuitions of our faculty of understanding. Sensory experience only makes sense because our faculty of sensibility processes it, organizing it according to our intuitions of time and space. These intuitions are the source of mathematics: our number sense comes from our intuition of successive moments in time, and geometry comes from our intuition of space. Events that take place in space and time would still be a meaningless jumble if it were not for our faculty of understanding, which organizes experience according to the concepts, like causation, which form the principles of natural science.
 					</div>
 					<div>
 						Set theory begins with a fundamental binary relation between an object o and a set A. If o is a member (or element) of A, the notation o ∈ A is used.[7] A set is described by listing elements separated by commas, or by a characterizing property of its elements, within braces { }.[8] Since sets are objects, the membership relation can relate sets as well.
@@ -84,7 +84,7 @@ The New Foundations systems of NFU (allowing urelements) and NF (lacking them) a
 
 Systems of constructive set theory, such as CST, CZF, and IZF, embed their set axioms in intuitionistic instead of classical logic. Yet other systems accept classical logic but feature a nonstandard membership relation. These include rough set theory and fuzzy set theory, in which the value of an atomic formula embodying the membership relation is not simply True or False. The Boolean-valued models of ZFC are a related subject.
 
-An enrichment of ZFC called internal set theory was proposed by Edward Nelson in 1977.	
+An enrichment of ZFC called internal set theory was proposed by Edward Nelson in 1977.
 					</div>
                 </div>
             </section>
@@ -93,3 +93,4 @@ An enrichment of ZFC called internal set theory was proposed by Edward Nelson in
 }
 
 export default Goal;
+
