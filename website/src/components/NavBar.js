@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import universe from '../myImages/subImages/dodecahedron.png';
+import universe from '../Images/subImages/dodecahedron.png';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -90,8 +90,8 @@ class NavBar extends React.Component {
                     >
                         Join
                     </span></Link>
-
-                    <Link to="/intro"><span
+					
+                    <Link to="/goal"><span
                                         style={{
                                             color:
                                             this.state.status === "up" ?
@@ -103,7 +103,7 @@ class NavBar extends React.Component {
                                             this.props.theStyle.navbtn2
                                         }
                     >
-                        Intro
+                        Goal
                     </span></Link>
                 </div>
             </div>
