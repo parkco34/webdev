@@ -6,7 +6,7 @@ const Goal = props => {
     return (
         <div style={{backgroundColor: 'white', color: 'black', width: '100vw', height: '100%'}}>
             <section className="sxn" style={{backgroundImage: `url(${theImage})`}}>
-                <ResponsiveNav scrollingDownColor="blue" scrollingUpColor="green"/>
+                <ResponsiveNav hintColor="white"/>
             </section>
             <section>
                 <div className="sxn2-container">
