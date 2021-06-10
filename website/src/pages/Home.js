@@ -1,19 +1,20 @@
 import React from 'react';
-import ResponsiveNav from '../comps/ResponsiveNav.js';
-import MainContent from '../comps/MainContent';
-import MainBackground from '../comps/MainBackground';
+import ResponsiveNav from '../components/ResponsiveNav.js';
+import MainContent from '../components/MainContent';
+import MainBackground from '../components/MainBackground';
 import Carousel from '../mainpage/Carousel2';
-import Background from '../comps/Background';
-import TheFooter from '../comps/footer/TheFooter';
+import Background from '../components/Background';
+import TheFooter from '../components/footer/TheFooter';
 import styles1 from '../cssModules/NavBar.module.css';
-import theImage from '../myImages/astronaut2.jpg';
+import theImage from '../Images/astronaut2.jpg';
+import melogo1 from '../Images/logo2.jpg';
 
 //<NavBar theStyle={styles1} up="white" down="black"/>
 
 function Home() {
     return (
 		<div style={{overflow: 'hidden'}} className="backgroundContainer">
-            <ResponsiveNav hintColor="black" />
+            <ResponsiveNav hintColor="black" fontColor="white" scrollingFontColor="white" logo={melogo1}/>
             <MainBackground image={theImage}/>
 			<MainContent />
             <TheFooter />
