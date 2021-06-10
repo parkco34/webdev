@@ -27,7 +27,6 @@ const Navigation = styled.header`
 
 	.fa-bars {
 		display: none;
-		color: green;
 		font-size: 2rem;
 	}
 	nav {
@@ -58,7 +57,7 @@ const Navigation = styled.header`
 
 	.navbtn1 {
 		position: relative;
-		color: #222;
+		color: ${props => props.fontColor || "#222"};
 		opacity: 0.55;
 		transition: all 0.6s;
 		font-size: 1em;
@@ -84,7 +83,6 @@ const Navigation = styled.header`
 		right: auto;
 		width: 100%;
 		opacity: 1;
-		color: green;
 	}
 
 	.navbtn2 {
@@ -160,13 +158,13 @@ const ResponsiveNav = props => {
 	}
 
 	return (
-		<Navigation>
+		<Navigation fontColor="white">
 			<div className="me-logo">
 				<Link to="/">
 					<p style={{visibility: 'hidden'}}>For Lebert</p>
 					<em>
 						<div className="secret-sauce">
-							<span className="hint" style={{color: 'white', position: 'absolute', top: '73%', left: '73%'}}>Change the Title of the Webpage to: CLASSIFIED</span>
+							<span className="hint" style={{color: props.hintColor, position: 'absolute', top: '73%', left: '73%'}}>Change the Title of the Webpage to: CLASSIFIED</span>
 						</div>
 					</em>
 				</Link>
