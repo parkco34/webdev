@@ -13,7 +13,7 @@ import theImage from '../myImages/astronaut2.jpg';
 function Home() {
     return (
 		<div style={{overflow: 'hidden'}} className="backgroundContainer">
-            <ResponsiveNav />
+            <ResponsiveNav hintColor="black" />
             <MainBackground image={theImage}/>
 			<MainContent />
             <TheFooter />
