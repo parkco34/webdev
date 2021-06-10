@@ -1,16 +1,17 @@
 import React, {useState} from 'react';
-import theImage from '../myImages/subImages/misc1.jpg';
-import ResponsiveNav from '../comps/ResponsiveNav.js';
+import theImage from '../Images/subImages/misc1.jpg';
+import ResponsiveNav from '../components/ResponsiveNav.js';
+import melogo2 from '../Images/logo2.jpg';
 
 const Goal = props => {
     return (
         <div style={{backgroundColor: 'white', color: 'black', width: '100vw', height: '100%'}}>
             <section className="sxn" style={{backgroundImage: `url(${theImage})`}}>
-                <ResponsiveNav hintColor="white"/>
+                <ResponsiveNav hintColor="white" fontColor="white" scrollingFontColor="black" logo={melogo2} />
             </section>
             <section>
                 <div className="sxn2-container">
-					<p className="paragraph" style={{margin: '0 auto', padding: '0 50px'}}>“For those who believe in God, most of the big questions are answered. But for those of us who can't readily accept
+					<p className="paragraph" style={{position: 'relative', margin: '7% 0 0 0', padding: '0 50px'}}>“For those who believe in God, most of the big questions are answered. But for those of us who can't readily accept
 						the God formula, the big answers don't remain stone-written. We adjust to new conditions and discoveries. We are pliable.
 						Love need not be a command nor faith a dictum. I am my own god. We are here to unlearn the teachings of the church, state,
 						and our educational system. We are here to drink beer. We are here to kill war. We are here to laugh at the odds and live our
