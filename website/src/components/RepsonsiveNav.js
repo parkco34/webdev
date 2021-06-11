@@ -33,7 +33,7 @@ const Navigation = styled.header`
 		position: fixed;
 		background-color: transparent;
 		display: flex;
-		margin: 0 45%;
+		margin: 0 35%;
 
 		ul {
 			display: flex;
@@ -58,7 +58,7 @@ const Navigation = styled.header`
 
 	.navbtn1 {
 		position: relative;
-		color: ${props => props.fontColor || "#CBCCD1"};
+		color: ${props => props.fontcolor || "#CBCCD1"};
 		opacity: 0.55;
 		transition: all 0.6s;
 		font-size: 1em;
@@ -70,7 +70,7 @@ const Navigation = styled.header`
 		right: 0;
 		width: 0;
 		bottom: -5px;
-		background: ${props => props.fontColor || "#CBCCD1"};
+		background: ${props => props.fontcolor || "#CBCCD1"};
 		height: 3px;
 		transition-property: width;
 		transition-duration: 0.3s;
@@ -141,9 +141,9 @@ const Navigation = styled.header`
 		display: flex;
 		postition: relative;
 		position: fixed;
-		margin-top: -3.5%;
-		margin-left: 7%;
-		color:${props => props.fontColor || "black"};
+		margin-top: -4.5%;
+		margin-left: %;
+		color:${props => props.fontcolor || "black"};
 	}
 
 	.thelogo {
@@ -174,14 +174,14 @@ const ResponsiveNav = props => {
 	}
 
 	return (
-		<Navigation fontColor={props.fontColor} scrollingFontColor={props.scrollingFontColor}>
+		<Navigation fontcolor={props.fontcolor} scrollingFontColor={props.scrollingFontColor}>
 			<div className="logo-container">
 				<Link to="/">
 					<p style={{visibility: 'hidden'}}>For Kyle Lebert</p>
-						<div className="me-logo" fontColor={props.fontColor}>
+						<div className="me-logo" fontcolor={props.fontcolor}>
 							<img
-								src={props.logo} 
-								alt="No Logo found!" 
+								src={props.logo}
+								alt="No Logo found!"
 								className="thelogo"
 							/>
 						</div>
@@ -242,5 +242,6 @@ const ResponsiveNav = props => {
 }
 
 export default ResponsiveNav;
+
 
 
