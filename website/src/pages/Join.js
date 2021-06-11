@@ -11,7 +11,7 @@ class Join extends Component {
 		return (
 			<div>
 				<Background2 />
-				<ResponsiveNav hintColor="white" fontColor="white" scrollingFontColor="white" logo={melogo1}/>
+				<ResponsiveNav hintColor="white" fontcolor="white" scrollingFontColor="white" logo={melogo1}/>
 				<div className="signin-container">
 					<Signin />
 				</div>
