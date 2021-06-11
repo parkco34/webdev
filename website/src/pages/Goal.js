@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
-import theImage from '../Images/subImages/misc1.jpg';
-import ResponsiveNav from '../components/ResponsiveNav.js';
-import melogo2 from '../Images/logo2.jpg';
+import theImage from '../myImages/subImages/misc1.jpg';
+import ResponsiveNav from '../comps/ResponsiveNav.js';
+import melogo2 from '../myImages/logo2.jpg';
 
 const Goal = props => {
     return (
         <div style={{backgroundColor: 'white', color: 'black', width: '100vw', height: '100%'}}>
             <section className="sxn" style={{backgroundImage: `url(${theImage})`}}>
-                <ResponsiveNav hintColor="white" fontColor="white" scrollingFontColor="black" logo={melogo2} />
+                <ResponsiveNav hintColor="white" fontcolor="white" scrollingFontColor="black" logo={melogo2} />
             </section>
             <section>
                 <div className="sxn2-container">
@@ -94,4 +94,5 @@ An enrichment of ZFC called internal set theory was proposed by Edward Nelson in
 }
 
 export default Goal;
+
 
