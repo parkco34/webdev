@@ -33,7 +33,7 @@ const DeleteMe = () => {
                     </div>
 
                     <div className="rigth_side">
-                        <img src={image4} alt="No Image Found Here!">
+                        <img src={image4} alt="No Image Found Here!" />
                     </div>
                 </div>
                 <svg className="svg_curve_bottom" xmlns="http://www.w3.org/2000/svg" fill="orange" viewBox="0 0 100" preserveAspectRatio="none">
@@ -44,23 +44,28 @@ const DeleteMe = () => {
             <div className="section3">
                 Sign my balls after you kiss my ass and order me sesame tofu in motha fuckin peanut sauce!
                 <input className="input_email" type="text" name="email" id="email" />
-                <MyButton text="Sign up" />
                 <div className="contacts">
                     <section className="contact_section">
                         <ul>
-                            <li>Penis</li>
+                            <li>Flavors of Asia</li>
                         </ul>
                     </section>
 
                     <section className="contact_section">
                         <ul>
-                            <li>Penis</li>
+                            <li>Roc Sushi</li>
                         </ul>
                     </section>
 
                     <section className="contact_section">
                         <ul>
-                            <li>Penis</li>
+                            <li>King and I</li>
+                        </ul>
+                    </section>
+					
+                    <section className="contact_section">
+                        <ul>
+                            <li>South Eastern Asian Restaurant</li>
                         </ul>
                     </section>
                 </div>
