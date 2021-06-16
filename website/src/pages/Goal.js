@@ -8,7 +8,7 @@ import poem from '../myImages/mypoem.jpg';
 import image3 from '../myImages/subImages/misc2.jpg';
 import ThePaper from '../comps/ThePaper';
 import ResponsiveNav from '../comps/ResponsiveNav.js';
-import melogo2 from '../myImages/logo2.jpg';
+import thelogo from '../myImages/logo2 copy-thing.png';
 
 const useStyles = makeStyles({
     root: {
@@ -40,7 +40,11 @@ const useStyles = makeStyles({
             backgroundColor: 'white',
             backgroundImage: 'url(`${bkImage}`)',
             backgroundSize: 'cover',
-        }
+        },
+//        '& .hideme': {
+//            // Use PROPS for this!
+//            visibility: 'hidden',
+//        },
     }
 })
 
@@ -50,12 +54,12 @@ const Goal = props => {
     return (
         <div className={classes.root}>
             <header className="da-header">
-                <ResponsiveNav hintColor="transparent" fontcolor="black" scrollingFontColor="white" logo={melogo2} />
+                <ResponsiveNav hintColor="transparent" fontcolor="black" scrollingFontColor="white" logo={thelogo} />
 
             </header>
             <section className="sxn">
                 <div className="sub-sxn first-img">
-                    <img src={theImage} style={{width: '1500px', hegith: '900px', overflow: 'hidden'}} alt="No Image Found!"/>
+                    <img src={theImage} className="hideme" style={{width: '1500px', hegith: '900px', overflow: 'hidden'}} alt="No Image Found!"/>
                 </div>
             </section>
 
