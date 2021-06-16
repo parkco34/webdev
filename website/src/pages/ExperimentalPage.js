@@ -1,6 +1,6 @@
 import React from 'react';
-import ParallaxWrapper from '../comps/ParallaxWrapper';
-import image1 from '../myImages/subImages/misc1.jpg';
+import ParallaxWrapper from '../components/ParallaxWrapper';
+import image1 from '../Images/misc1.jpg';
 
 const styles = {
 	obj: {
