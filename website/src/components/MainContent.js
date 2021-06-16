@@ -58,9 +58,6 @@ function MainContent() {
             <Divider style={{background: 'white'}}/>
             <section className={classes.fullWidth}>
                 <div className={classes.title}>
-                   <Typography variant='h6' style={{fontFamily: 'MandroidBB', fontSize: '48px', fontWeight: 'bold'}}>
-                        Current Learning w/ Supplementation
-                    </Typography>
                 </div>
                 <div className={classes.content}>
                     <Typography className={classes.content}>
