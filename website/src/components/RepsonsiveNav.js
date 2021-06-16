@@ -139,9 +139,8 @@ const Navigation = styled.header`
 
 	.me-logo {
 		display: flex;
-		postition: relative;
 		position: fixed;
-		margin-top: -4.5%;
+		margin-top: -3.5%;
 		margin-left: %;
 		color:${props => props.fontcolor || "black"};
 	}
@@ -195,7 +194,7 @@ const ResponsiveNav = props => {
 					<NavLink activeClassName="active" to="/">
 						<li
 							className={
-								colorChange ? 'navbtn2' : 'navbtn1'
+								colorChange ? 'navbtn2' : 'navbtn1 twat'
 							}
 						>
                             Home
@@ -229,6 +228,16 @@ const ResponsiveNav = props => {
 							}
 						>
                         Goal
+                        </li>
+                    </NavLink>
+					
+                    <NavLink activeClassName="active" to="/store">
+						<li
+							className={
+								colorChange ? 'navbtn2' : 'navbtn1'
+							}
+						>
+                        Store
                         </li>
                     </NavLink>
 				</ul>
