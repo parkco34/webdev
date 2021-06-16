@@ -154,7 +154,6 @@ const Navigation = styled.header`
 `
 
 const ResponsiveNav = props => {
-	const [expand, setExpand] = useState(false);
 	const [colorChange, setColorChange] = useState(false);
 
 	const changeNavbarColor = () => {
@@ -166,12 +165,9 @@ const ResponsiveNav = props => {
 		}
 	};
 
-	window.addEventListener('scroll', changeNavbarColor);
-
-	const handleToggle = e => {
-		e.preventDefault();
-		setExpand(!expand);
-	}
+	useEffect(() => {
+		window.addEventListener('scroll', changeNavbarColor);
+	},[]);
 
 	return (
 		<Navigation fontcolor={props.fontcolor} scrollingFontColor={props.scrollingFontColor}>
@@ -195,7 +191,7 @@ const ResponsiveNav = props => {
 
 			<nav className="nav">
 				<i className="fa fa-bars" aria-hidden="true" />
-				<ul className={`collapsed ${expand ? "expanded" : ""}`}>
+				<ul >
 					<NavLink activeClassName="active" to="/">
 						<li
 							className={
