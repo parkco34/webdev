@@ -1,6 +1,6 @@
 import React from 'react';
 import ParallaxWrapper from '../comps/ParallaxWrapper';
-import image1 from '../myImages/misc1.jpg';
+import image1 from '../myImages/subImages/misc1.jpg';
 
 const styles = {
 	obj: {
@@ -32,3 +32,4 @@ function ExperimentationPage() {
 }
 
 export default ExperimentationPage;
+
