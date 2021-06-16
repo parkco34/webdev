@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Background from '../comps/Background';
-import theImage from '../myImages/subImages/misc1.jpg';
-import bkImage from '../myImages/subImages/joinus1.jpg';
-import image2 from '../myImages/depression1.webp';
-import poem from '../myImages/mypoem.jpg';
-import image3 from '../myImages/subImages/misc2.jpg';
-import ThePaper from '../comps/ThePaper';
-import ResponsiveNav from '../comps/ResponsiveNav.js';
-import thelogo from '../myImages/logo2 copy-thing.png';
+import theImage from '../Images/subImages/misc1.jpg';
+import bkImage from '../Images/subImages/joinus1.jpg';
+import image2 from '../Images/depression1.webp';
+import poem from '../Images/mypoem.jpg';
+import image3 from '../Images/subImages/misc2.jpg';
+import ThePaper from '../components/ThePaper';
+import ResponsiveNav from '../components/ResponsiveNav.js';
+import thelogo from '../Images/logo2 copy-thing.png';
 
 const useStyles = makeStyles({
     root: {
