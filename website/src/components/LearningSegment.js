@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Programming from './learning/Programming';
-import img1 from '../Images/math.jpg';
-import img2 from'../Images/cs.jpg';
-import img3 from '../Images/halt.jpg';
+import img1 from '../myImages/math.jpg';
+import img2 from'../myImages/cs.jpg';
+import img3 from '../myImages/halt.jpg';
 import './MandroidBB.css';
 
 const useStyles = makeStyles(theme => ({
