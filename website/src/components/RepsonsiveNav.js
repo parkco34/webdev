@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import {NavLink, Link} from 'react-router-dom';
 import MandroidBB from '../MandroidBB.ttf';
+
 const Navigation = styled.header`
 	z-index: 1;
 	display: flex;
@@ -11,16 +12,19 @@ const Navigation = styled.header`
 	height: 100px;
 	margin-bottom: -73px;
     font-family: MandroidBB;
+
     em {
 		font-size: 0.5em;
 		float: left;
 		display: block;
+
 		.secret-sauce {
 			display: inline-block;
 			line-height: 260%;
 			float: left;
 		}
 	}
+
 	.fa-bars {
 		display: none;
 		font-size: 2rem;
@@ -30,6 +34,7 @@ const Navigation = styled.header`
 		background-color: transparent;
 		display: flex;
 		margin: 0 35%;
+
 		ul {
 			display: flex;
 			flex-direction: row;
@@ -50,6 +55,7 @@ const Navigation = styled.header`
 			color: black;
 		}
 	}
+
 	.navbtn1 {
 		position: relative;
 		color: ${props => props.fontcolor || "#CBCCD1"};
@@ -70,6 +76,7 @@ const Navigation = styled.header`
 		transition-duration: 0.3s;
 		transition-timing-function: ease-out;
 	}
+
 	.navbtn1:hover:after,
 	.navbtn1:focus:after,
 	.navbtn1:active:after {
@@ -78,11 +85,13 @@ const Navigation = styled.header`
 		width: 100%;
 		opacity: 1;
 	}
+
 	.navbtn2 {
 		position: relative;
 		color: ${props => props.scrollingFontColor || "black"};
         list-style-type: none;
 	}
+
 	.navbtn2:after {
 		content: "";
 		position: absolute;
@@ -95,6 +104,7 @@ const Navigation = styled.header`
 		transition-duration: 0.3s;
 		transition-timing-function: ease-out;
 	}
+
 	.navbtn2:hover:after,
 	.navbtn2:focus:after,
 	.navbtn2:active:after {
@@ -103,18 +113,22 @@ const Navigation = styled.header`
 		width: 100%;
         color: black;
 	}
+
     @media only screen and (max-width: 800px) {
         padding: 0px;
     }
+
     @media only screen and (max-width: 600px) {
         height: auto;
         min-height: 50px;
         display: block;
         position: relative;
+
         a {
             padding: 20px 0px;
         }
     }
+
     .fa-bars {
         display: inline-block;
         position: absolute;
@@ -122,15 +136,15 @@ const Navigation = styled.header`
         right: 10px;
         cursor: pointer;
     }
+
 	.me-logo {
 		display: flex;
-		postition: relative;
 		position: fixed;
 		margin-top: -3.5%;
-		margin-top: -4.5%;
 		margin-left: %;
 		color:${props => props.fontcolor || "black"};
 	}
+
 	.thelogo {
 		width: 85px;
 		height: 85px;
@@ -139,7 +153,6 @@ const Navigation = styled.header`
 `
 
 const ResponsiveNav = props => {
-	const [expand, setExpand] = useState(false);
 	const [colorChange, setColorChange] = useState(false);
 
 	const changeNavbarColor = () => {
@@ -154,12 +167,6 @@ const ResponsiveNav = props => {
 	useEffect(() => {
 		window.addEventListener('scroll', changeNavbarColor);
 	},[]);
-	window.addEventListener('scroll', changeNavbarColor);
-
-	const handleToggle = e => {
-		e.preventDefault();
-		setExpand(!expand);
-	}
 
 	return (
 		<Navigation fontcolor={props.fontcolor} scrollingFontColor={props.scrollingFontColor}>
@@ -184,17 +191,16 @@ const ResponsiveNav = props => {
 			<nav className="nav">
 				<i className="fa fa-bars" aria-hidden="true" />
 				<ul >
-				<ul className={`collapsed ${expand ? "expanded" : ""}`}>
 					<NavLink activeClassName="active" to="/">
 						<li
 							className={
 								colorChange ? 'navbtn2' : 'navbtn1 twat'
-								colorChange ? 'navbtn2' : 'navbtn1'
 							}
 						>
                             Home
                         </li>
 					</NavLink>
+
 					<NavLink activeClassName="active" to="/about">
 						<li
 							className={
@@ -204,6 +210,7 @@ const ResponsiveNav = props => {
                         About
                         </li>
 					</NavLink>
+
 					<NavLink activeClassName="active" to="/join">
 						<li
 							className={
@@ -213,6 +220,7 @@ const ResponsiveNav = props => {
                         Join
                         </li>
 					</NavLink>
+
                     <NavLink activeClassName="active" to="/goal">
 						<li
 							className={
@@ -222,7 +230,7 @@ const ResponsiveNav = props => {
                         Goal
                         </li>
                     </NavLink>
-
+					
                     <NavLink activeClassName="active" to="/store">
 						<li
 							className={
@@ -237,4 +245,8 @@ const ResponsiveNav = props => {
 		</Navigation>
 	);
 }
+
 export default ResponsiveNav;
+
+
+
