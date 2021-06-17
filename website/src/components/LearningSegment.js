@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import img1 from '../myImages/math.jpg';
-import img2 from'../myImages/cs.jpg';
-import img3 from '../myImages/halt.jpg';
+import Programming from './learning/Programming';
+import img1 from '../Images/math.jpg';
+import img2 from'../Images/cs.jpg';
+import img3 from '../Images/halt.jpg';
 import './MandroidBB.css';
 
 const useStyles = makeStyles(theme => ({
@@ -15,7 +16,7 @@ const useStyles = makeStyles(theme => ({
 		justifyContent: 'center',
 		lineHeight: '10',
 		padding: '3%',
-		color: 'white',
+		color: '#CBCCD1',
 		fontSize: '56px',
 		height: 'inherit',
 		margin: 'auto',
@@ -28,7 +29,7 @@ const useStyles = makeStyles(theme => ({
 		},
         '& .proper-text': {
             textShadow: 'black 1px 0 30px',
-        }
+        },
 	},
 	toproot: {
 		display: 'flex',
@@ -40,6 +41,7 @@ const useStyles = makeStyles(theme => ({
 	paperHovered: {
 		transition: "transform 0.37s ease-in-out",
 		transform: "scale(1.1)",
+		cursor: 'pointer',
 	},
 }));
 
@@ -61,6 +63,10 @@ const LearningSegment = () => {
 		raised: false,
 		shadow: 1,
 	});
+
+	const [clicked, setClicked] = useState(false);
+
+	const handleOnClick = () => setClicked(!clicked);
 
 	return (
         <div>
@@ -84,6 +90,7 @@ const LearningSegment = () => {
                 <div className="paper-item">
                     <Paper
                         classes={{root: expand2.raised ? classes.paperHovered : ""}}
+						onClick={handleOnClick}
                         onMouseOver={()=>setExpand2({raised: true, shadow: 3})}
                         onMouseOut={()=>setExpand2({raised: false, shadow: 1})}
                         raised={expand2.raised ? 1 : 0} zdepth={expand2.shadow}
@@ -113,6 +120,14 @@ const LearningSegment = () => {
                     </Paper>
                 </div>
             </section>
+
+			<div className="programming shh">
+				{clicked &&
+					<section className="programming shh">
+						<Programming />
+					</section>
+				}
+			</div>
         </div>
 	);
 }
