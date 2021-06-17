@@ -139,8 +139,9 @@ const Navigation = styled.header`
 
 	.me-logo {
 		display: flex;
+		postition: relative;
 		position: fixed;
-		margin-top: -3.5%;
+		margin-top: -4.5%;
 		margin-left: %;
 		color:${props => props.fontcolor || "black"};
 	}
@@ -153,6 +154,7 @@ const Navigation = styled.header`
 `
 
 const ResponsiveNav = props => {
+	const [expand, setExpand] = useState(false);
 	const [colorChange, setColorChange] = useState(false);
 
 	const changeNavbarColor = () => {
@@ -164,9 +166,12 @@ const ResponsiveNav = props => {
 		}
 	};
 
-	useEffect(() => {
-		window.addEventListener('scroll', changeNavbarColor);
-	},[]);
+	window.addEventListener('scroll', changeNavbarColor);
+
+	const handleToggle = e => {
+		e.preventDefault();
+		setExpand(!expand);
+	}
 
 	return (
 		<Navigation fontcolor={props.fontcolor} scrollingFontColor={props.scrollingFontColor}>
@@ -190,11 +195,11 @@ const ResponsiveNav = props => {
 
 			<nav className="nav">
 				<i className="fa fa-bars" aria-hidden="true" />
-				<ul >
+				<ul className={`collapsed ${expand ? "expanded" : ""}`}>
 					<NavLink activeClassName="active" to="/">
 						<li
 							className={
-								colorChange ? 'navbtn2' : 'navbtn1 twat'
+								colorChange ? 'navbtn2' : 'navbtn1'
 							}
 						>
                             Home
@@ -230,16 +235,6 @@ const ResponsiveNav = props => {
                         Goal
                         </li>
                     </NavLink>
-					
-                    <NavLink activeClassName="active" to="/store">
-						<li
-							className={
-								colorChange ? 'navbtn2' : 'navbtn1'
-							}
-						>
-                        Store
-                        </li>
-                    </NavLink>
 				</ul>
 			</nav>
 		</Navigation>
@@ -247,6 +242,7 @@ const ResponsiveNav = props => {
 }
 
 export default ResponsiveNav;
+
 
 
 
