@@ -1,9 +1,9 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
-import image1 from '../myImages/robot1.webp';
-import image2 from '../myImages/robot2.webp';
-import image3 from '../myImages/robot3.webp';
-import image4 from '../myImages/devil.webp';
+import image1 from '../Images/robot1.webp';
+import image2 from '../Images/robot2.webp';
+import image3 from '../Images/robot3.webp';
+import image4 from '../Images/devil.webp';
 
 const useStyles = makeStyles({
     root: {
