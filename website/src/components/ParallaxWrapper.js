@@ -1,15 +1,4 @@
 import React, {Fragment, Component} from 'react';
-import {makeStyles, withStyles} from '@material-ui/core/styles';
-
-const useStyles = makeStyles({
-	root: {
-		margin: '0',
-		padding: '0',
-		width: '100vw',
-		height: '300vh',
-		overflowX: 'hidden',
-	},
-});
 
 function ParallaxWrapper(JSXElement, weight) {
 	return class extends Component {
@@ -37,7 +26,7 @@ function ParallaxWrapper(JSXElement, weight) {
 
 			this.setState({
 				ease: weight,
-				WrappedElement: JSXElementWithRef,
+				WrappedElement: JSXElementWithRef
 			}, () => {
 				this.setState({ start_position: ref.current.offsetTop }, () => {
 					this.wrappedElement = ref;
@@ -46,7 +35,7 @@ function ParallaxWrapper(JSXElement, weight) {
 			});
 		}
 
-		animation_scroll = () => {
+		animate_scroll = () => {
 			if (!this.animation_running) {
 				this.animation_running = true;
 				requestAnimationFrame(this.animation_loop);
@@ -57,7 +46,7 @@ function ParallaxWrapper(JSXElement, weight) {
 			let current_offset = window.pageYOffset;
 
 			let difference = current_offset - this.last_offset;
-			difference += this.state.ease;
+			difference *= this.state.ease;
 
 			if (Math.abs(difference) < 0.05) {
 				this.last_offset = current_offset;
@@ -66,23 +55,20 @@ function ParallaxWrapper(JSXElement, weight) {
 			}
 
 			this.wrappedElement.current.style.top = `${this.state.start_position - this.last_offset}px`;
-
+			console.log("Start Position: ", this.state.start_position, "\nLast Offset: ", this.last_offset);
 			this.last_offset += difference;
-
+			console.log(this.wrappedElement);
 			requestAnimationFrame(this.animation_loop);
 		}
 
 		render() {
-			const {classes} = this.props;
-
 			return (
-				<Fragment className={classes.root}>
+				<Fragment>
 					{this.state.WrappedElement}
 				</Fragment>
-			);
+			)
 		}
 	}
 }
 
-export default withStyles(useStyles)(ParallaxWrapper);
-
+export default ParallaxWrapper;
