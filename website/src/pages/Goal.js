@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Background from '../comps/Background';
-import theImage from '../Images/subImages/misc1.jpg';
-import bkImage from '../Images/subImages/joinus1.jpg';
-import image2 from '../Images/depression1.webp';
-import poem from '../Images/mypoem.jpg';
-import image3 from '../Images/subImages/misc2.jpg';
-import ThePaper from '../components/ThePaper';
-import ResponsiveNav from '../components/ResponsiveNav.js';
-import thelogo from '../Images/logo2 copy-thing.png';
+import theImage from '../myImages/subImages/misc1.jpg';
+import bkImage from '../myImages/cyber_city2.jpg';
+import image2 from '../myImages/aitouch.jpg';
+import poem from '../myImages/mypoem.jpg';
+import image3 from '../myImages/subImages/misc2.jpg';
+import ThePaper from '../comps/ThePaper';
+import ResponsiveNav from '../comps/ResponsiveNav.js';
+import thelogo from '../myImages/logo22.jpg';
 
 const useStyles = makeStyles({
     root: {
@@ -31,16 +31,22 @@ const useStyles = makeStyles({
             margin: '0 auto',
         },
         '& .paper-sheet': {
-            backgroundImage: 'url(`${image3}`)',
+            backgroundImage: `url(${image3})`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
         },
         '& .papers-bk': {
+			width: '100%',
+			height: '655px',
             backgroundColor: 'white',
-            backgroundImage: 'url(`${bkImage}`)',
+            backgroundImage: `url(${bkImage})`,
             backgroundSize: 'cover',
+			backgroundPosition: 'center',
         },
+		'& .me-poem': {
+			display: 'none',
+		}
 //        '& .hideme': {
 //            // Use PROPS for this!
 //            visibility: 'hidden',
@@ -74,7 +80,7 @@ const Goal = props => {
             </section>
 
             <section className="sxn">
-                <div className="sub-sxn">
+                <div className="sub-sxn me-poem">
                     <img src={poem} className="my-poem" alt="CLASSIFIED"/>
                 </div>
             </section>
