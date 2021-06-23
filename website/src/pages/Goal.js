@@ -10,7 +10,6 @@ import ThePaper from '../components/ThePaper';
 import ResponsiveNav from '../components/ResponsiveNav.js';
 import thelogo from '../Images/logo22.jpg';
 import ScrollEffect from '../components/ScrollEffect';
-import revenge from '../Images/revenge.jpg';
 
 const useStyles = makeStyles({
     root: {
@@ -67,7 +66,7 @@ const Goal = props => {
             </header>
             <section className="sxn">
                 <div className="sub-sxn first-img">
-                    <img src={theImage} className="hideme" style={{width: '1500px', hegith: '900px', overflow: 'hidden'}} alt="No Image Found!"/>
+                    <img src={theImage} className="hideme" style={{width: '1500px', height: '900px', overflow: 'hidden'}} alt="No Image Found!"/>
                 </div>
             </section>
 
@@ -89,7 +88,6 @@ const Goal = props => {
 			
             <section className="sxn">
                 <div className="sub-sxn scroll-effect">
-                    <img src={revenge} className="my-poem" alt="CLASSIFIED"/>
 					<ScrollEffect Img1={image2}/>
                 </div>
             </section>
