@@ -1,7 +1,7 @@
 import React, {useEffect, useState, useRef} from "react";
-import mainImage from '../myImages/subImages/2014_2.jpg';
-import mainImage2 from '../myImages/subImages/2014_1.jpg';
-import mobileImage from '../myImages/devil.webp';
+import mainImage from '../Images/subImages/2014_2.jpg';
+import mainImage2 from '../Images/subImages/2014_1.jpg';
+import mobileImage from '../Images/devil.webp';
 import styles from '../cssModules/Background.module.css';
 
 const Background = () => {
@@ -58,9 +58,11 @@ const Background = () => {
 		}
 	}, 2000);
 
+//	const image = useWindowWidth() >= 650 ? mainImage : mobileImage;
+
     return (
         <div className={styles.mainContainer}>
-            <div className={styles.theBackground} style={{backgroundImage: `url(${image})`}}>
+			<div className={styles.theBackground} style={{backgroundImage: `url(${image})`}}>
                 <div className={styles.backgroundContainer} >
                 </div>
             </div>
