@@ -11,11 +11,12 @@ const Div = styled.div`
 	height: ${props => props.Height || "450px"};
 	width: ${props => props.Width || "450px"};
 	background-repeat: no-repeat;
-	background: ${props => url(props.backImage) || props.bkColor === props.backColor || "white"};
-	tranform: translateY(${({animate}) => (animate ? "-46vh" : "0")});
+	background-image: url(${props => props.backImage});
+	transform: translateY(${({animate}) => (animate ? "-46vh" : "0")});
 	transition: transform 1s;
 	margin: 20px;
-	opacity: ${({props}) => props.fadePercent ? `${props.fadePercent / 100}` : `1`};
+	opacity: ${({animatePercent}) => animatePercent ? `${animatePercent / 100}` : `1`};
+	z-index: 1;
 `;
 
 const MyScrollEffect = props => {
@@ -48,7 +49,7 @@ const MyScrollEffect = props => {
 			if (otherDivPos < scrollPos) {
 				setShow(state => ({...state, itemTwo: true}));
 
-				let itemTwoPercent = ((srollPos - otherDivPos) * 100) / otherDivHeight;
+				let itemTwoPercent = ((scrollPos - otherDivPos) * 100) / otherDivHeight;
 				if (itemTwoPercent > 100) itemTwoPercent = 100;
 				if (itemTwoPercent < 0) itemTwoPercent = 0;
 
@@ -71,15 +72,28 @@ const MyScrollEffect = props => {
 			<Wrapper>
 				<Div
 					animate={show.itemOne}
-					animatePercent={percentShown.itemOne}
+					animatePercent={percentShow.itemOne}
 					ref={myRef}
 					backImage={props.backImage}
-					backColor={props.backColor}
 					Width={props.Width}
 					Height={props.Height}
 				>
+					<p>Hello</p>
+					<p>Frend...</p>
+					<p>we've been waiting for you.</p>
 				</Div>
+				
+				<Div
+					animate={show.itemTwo}
+					animatePercent={percentShow.itemTwo}
+					ref={otherRef}
+					backImage={props.backImage}
+					Width={props.Width}
+					Height={props.Height}
+				/>
 			</Wrapper>			
 		</>
 	);
 }
+
+export default MyScrollEffect;
