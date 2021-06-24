@@ -4,12 +4,14 @@ import Background from '../components/Background';
 import theImage from '../Images/subImages/misc1.jpg';
 import bkImage from '../Images/cyber_city2.jpg';
 import image2 from '../Images/aitouch.jpg';
+import scrollImage from '../Images/astronaut.jpg';
 import poem from '../Images/mypoem.jpg';
 import image3 from '../Images/subImages/misc2.jpg';
 import ThePaper from '../components/ThePaper';
 import ResponsiveNav from '../components/ResponsiveNav.js';
 import thelogo from '../Images/logo22.jpg';
 import ScrollEffect from '../components/ScrollEffect';
+import MyScrollEffect from '../components/MyScrollEffect';
 
 const useStyles = makeStyles({
     root: {
@@ -88,7 +90,7 @@ const Goal = props => {
 			
             <section className="sxn">
                 <div className="sub-sxn scroll-effect">
-					<ScrollEffect Img1={image2}/>
+					<MyScrollEffect bkImage={scrollImage} Width={'600px'} Height={'750px'}/>
                 </div>
             </section>
         </div>
