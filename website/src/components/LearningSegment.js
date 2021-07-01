@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Programming from './learning/Programming';
-import img1 from '../myImages/math.jpg';
-import img2 from'../myImages/cs.jpg';
-import img3 from '../myImages/halt.jpg';
+import img1 from '../Images/math.jpg';
+import img2 from'../Images/cs.jpg';
+import img3 from '../Images/halt.jpg';
 import './MandroidBB.css';
 
 const useStyles = makeStyles(theme => ({
@@ -30,6 +30,12 @@ const useStyles = makeStyles(theme => ({
         '& .proper-text': {
             textShadow: 'black 1px 0 30px',
         },
+		'& .halt': {
+			display: 'flex',
+			justifyContent: 'center',
+			alignItems: 'center',
+			border: '3px solid yellow',
+		},
 	},
 	toproot: {
 		display: 'flex',
@@ -48,6 +54,7 @@ const useStyles = makeStyles(theme => ({
 // Refactor this shit, please...
 const LearningSegment = () => {
 	const classes = useStyles();
+	const [clicked1, setClicked1] = useState(false);
 
 	const [expand1, setExpand1] = useState({
 		raised: false,
@@ -67,6 +74,7 @@ const LearningSegment = () => {
 	const [clicked, setClicked] = useState(false);
 
 	const handleOnClick = () => setClicked(!clicked);
+	const handleOnClick1 = () => setClicked1(!clicked1);
 
 	return (
         <div>
@@ -107,6 +115,7 @@ const LearningSegment = () => {
                 <div className="paper-item">
                     <Paper
                         classes={{root: expand3.raised ? classes.paperHovered : ""}}
+						onClick={handleOnclick1}
                         onMouseOver={()=>setExpand3({raised: true, shadow: 3})}
                         onMouseOut={()=>setExpand3({raised: false, shadow: 1})}
                         raised={expand3.raised ? 1 : 0} zdepth={expand3.shadow}
@@ -126,6 +135,16 @@ const LearningSegment = () => {
 					<section className="programming shh">
 						<Programming />
 					</section>
+				}
+			</div>
+
+			<div>
+				{clicked1 &&
+				<section className={classes.root}>
+					<div className="halt">
+						<iframe src="https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)" frameborder="0"></iframe>
+					</div>
+				</section>
 				}
 			</div>
         </div>
