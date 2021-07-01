@@ -35,6 +35,12 @@ const useStyles = makeStyles(theme => ({
 			justifyContent: 'center',
 			alignItems: 'center',
 			border: '3px solid yellow',
+			width: '100%',
+			height: '700px',
+		},
+		'& .halt-catchfire': {
+			width: '95%',
+			height: '650px',
 		},
 	},
 	toproot: {
@@ -115,7 +121,7 @@ const LearningSegment = () => {
                 <div className="paper-item">
                     <Paper
                         classes={{root: expand3.raised ? classes.paperHovered : ""}}
-						onClick={handleOnclick1}
+						onClick={handleOnClick1}
                         onMouseOver={()=>setExpand3({raised: true, shadow: 3})}
                         onMouseOut={()=>setExpand3({raised: false, shadow: 1})}
                         raised={expand3.raised ? 1 : 0} zdepth={expand3.shadow}
@@ -142,7 +148,12 @@ const LearningSegment = () => {
 				{clicked1 &&
 				<section className={classes.root}>
 					<div className="halt">
-						<iframe src="https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)" frameborder="0"></iframe>
+						<iframe 
+							src="https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)" 
+							frameborder="0"
+							className="halt-catchfire"
+						>
+						</iframe>
 					</div>
 				</section>
 				}
