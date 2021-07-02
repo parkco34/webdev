@@ -14,7 +14,7 @@ const Div = styled.div`
 	background-image: url(${props => props.backImage});
 	transform: translateY(${({animate}) => (animate ? "-46vh" : "0")});
 	transition: transform 1s;
-	margin: 20px;
+	margin: 500px;
 	opacity: ${({animatePercent}) => animatePercent ? `${animatePercent / 100}` : `1`};
 	z-index: 1;
 `;
