@@ -14,14 +14,18 @@ const useStyles = makeStyles(theme => ({
             height: theme.spacing(59),
         },
     },
+	proper: props => ({
+		background: `url(${props.Background})`
+	})
 }));
 
 export default function ThePaper(props) {
-    const classes = useStyles();
+    const classes = useStyles(props);
+	const {proper} = props;
 
     return (
         <div className={classes.root}>
-            <Paper elevation={3} />
+            <Paper elevation={3} Background={props.Background} background={props.background}/>
         </div>
     );
 }
