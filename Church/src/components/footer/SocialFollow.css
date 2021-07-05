@@ -9,6 +9,10 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.footer {
+    height: 5em;
+}
+
 .the-social {
    margin: 0 auto;
     display: flex;
