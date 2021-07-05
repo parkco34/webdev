@@ -39,6 +39,8 @@ const Navigation = styled.header`
 			flex-direction: row;
 			justify-content: space-between;
 			margin: 0 31%;
+            font-weight: 600;
+            font-size: 1rem;
 		}
 		li {
 			margin: 0 65px;
@@ -149,9 +151,9 @@ const Navigation = styled.header`
 	}
 
 	.thelogo {
-		width: 85px;
-		height: 85px;
 		z-index: 1;
+        width: 15%;
+
 	}
 `
 
