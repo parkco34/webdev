@@ -6,11 +6,9 @@ const Navigation = styled.header`
 	z-index: 1;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
-	padding: 0px 100px 0;
-	height: 100px;
-	margin-bottom: -73px;
+	height: 5rem;
     font-family: Didot, serif;
+    padding-left: 10rem;
 
     em {
 		font-size: 0.5em;
@@ -29,10 +27,10 @@ const Navigation = styled.header`
 		font-size: 2rem;
 	}
 	nav {
+        padding: 2rem 0 0 25rem;
 		position: fixed;
 		background-color: transparent;
 		display: flex;
-		margin: 0 35%;
 
 		ul {
 			display: flex;
@@ -59,7 +57,7 @@ const Navigation = styled.header`
 
 	.navbtn1 {
 		position: relative;
-		color: ${props => props.fontcolor || "#CBCCD1"};
+		color: ${props => props.fontcolor || "black"};
 		opacity: 1;
 		transition: all 0.6s;
 		font-size: 1em;
@@ -71,7 +69,7 @@ const Navigation = styled.header`
 		right: 0;
 		width: 0;
 		bottom: -5px;
-		background: ${props => props.fontcolor || "#CBCCD1"};
+		background: ${props => props.fontcolor || "black"};
 		height: 3px;
 		transition-property: width;
 		transition-duration: 0.3s;
@@ -130,8 +128,16 @@ const Navigation = styled.header`
         }
     }
 
-    @media only screen and (max-width: 1445px) {
+    @media only screen and (max-width: 450px) {
         margin: 0 -100px;
+    }
+
+    .logo-container {
+        display: display;
+        position: relative;
+        padding: 0 0 0 0;
+        width: 7rem;
+        height: 7rem;
     }
 
     .fa-bars {
@@ -143,16 +149,15 @@ const Navigation = styled.header`
     }
 
 	.me-logo {
-		display: flex;
-		position: fixed;
-		margin-top: -3.5%;
-		margin-left: 7%;
+        width: 5.5rem;
+        height: 5.5rem;
 		color:${props => props.fontcolor || "black"};
 	}
 
 	.thelogo {
 		z-index: 1;
-        width: 15%;
+        width: inherit;
+        height: inherit;
 
 	}
 `
