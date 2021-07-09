@@ -10,6 +10,12 @@ const Navigation = styled.header`
     font-family: Didot, serif;
     padding-left: 10rem;
 
+	@media only screen and (max-width: 950px) {
+		display: flex;
+		justify-content: space-between;
+		margin-left: 500px;
+	}
+
     em {
 		font-size: 0.5em;
 		float: left;
@@ -27,18 +33,19 @@ const Navigation = styled.header`
 		font-size: 2rem;
 	}
 	nav {
-        padding: 2rem 0 0 25rem;
+        padding: 2rem 0 0 0;
 		position: fixed;
 		background-color: transparent;
 		display: flex;
 
 		ul {
 			display: flex;
+			margin-left: 225%;
 			flex-direction: row;
 			justify-content: space-between;
-			margin: 0 31%;
             font-weight: 600;
             font-size: 1rem;
+
 		}
 		li {
 			margin: 0 65px;
@@ -133,7 +140,7 @@ const Navigation = styled.header`
     }
 
     .logo-container {
-        display: display;
+        display: flex;
         position: relative;
         padding: 0 0 0 0;
         width: 7rem;
@@ -160,10 +167,26 @@ const Navigation = styled.header`
         height: inherit;
 
 	}
-`
+`;
 
 const Navbar = props => {
 	const [colorChange, setColorChange] = useState(false);
+	const [windowDimension, setWindowDimension] = useState(null);
+
+	useEffect(() => {
+		setWindowDimension(window.innerWidth);
+	}, []);
+
+	useEffect(() => {
+		function handleResize() {
+			setWindowDimension(window.innerWidth);
+		}
+
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
+
+	const isMobile = windowDimension <= 650;
 
 	const changeNavbarColor = () => {
 		if (window.scrollY >= 120) {
