@@ -1,33 +1,27 @@
-import React, {useState} from 'react';
-import Paper from '@material-ui/core/Paper';
-import {makeStyles} from '@material-ui/core/styles';
+import React, {Component} from 'react';
+import SocialFollow from './SocialFollow';
+import styled from 'styled-components';
 
-const useStyles = makeStyles(theme => ({
-    root: {
-        display: 'flex',
-        flexWrap: 'wrap',
-		zIndex: '1',
+const Foot = {
+	Loose: styled.div`
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100vw;
+		background-color: black;
+		z-index: 2;
+	`,
+};
 
-        '& > *': {
-            margin: theme.spacing(1),
-            width: theme.spacing(51),
-            height: theme.spacing(59),
-        },
-    },
-	proper: props => ({
-		background: `url(${props.Background})`
-	})
-}));
-
-export default function ThePaper(props) {
-    const classes = useStyles(props);
-	const {proper} = props;
-
-    return (
-        <div className={classes.root}>
-            <Paper elevation={3} Background={props.Background} background={props.background}/>
-        </div>
-    );
+export default class TheFooter extends Component {
+    render() {
+        return (
+            <Foot.Loose>
+               <div>
+                    <SocialFollow />
+                </div>
+            </Foot.Loose>
+        );
+    }
 }
-
 
