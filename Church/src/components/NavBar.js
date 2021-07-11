@@ -6,15 +6,13 @@ const Navigation = styled.header`
 	z-index: 1;
 	display: flex;
 	justify-content: space-between;
-	height: 5rem;
+	align-items: center;
+	padding: 0px 300px 0;
+	height: 100px;
+	margin-bottom: -73px;
     font-family: Didot, serif;
-    padding-left: 10rem;
-
-	@media only screen and (max-width: 950px) {
-		display: flex;
-		justify-content: space-between;
-		margin-left: 500px;
-	}
+    font-size: 1.15rem;
+    overflow: hidden;
 
     em {
 		font-size: 0.5em;
@@ -33,22 +31,19 @@ const Navigation = styled.header`
 		font-size: 2rem;
 	}
 	nav {
-        padding: 2rem 0 0 0;
 		position: fixed;
 		background-color: transparent;
 		display: flex;
+		margin: 0 35%;
 
 		ul {
 			display: flex;
-			margin-left: 225%;
 			flex-direction: row;
 			justify-content: space-between;
-            font-weight: 600;
-            font-size: 1rem;
-
+			margin: 0 31%;
 		}
 		li {
-			margin: 0 65px;
+			margin: 0 45px;
 			justify-content: space-between;
 		}
 		a {
@@ -64,7 +59,7 @@ const Navigation = styled.header`
 
 	.navbtn1 {
 		position: relative;
-		color: ${props => props.fontcolor || "black"};
+		color: ${props => props.fontColor || "black"};
 		opacity: 1;
 		transition: all 0.6s;
 		font-size: 1em;
@@ -76,7 +71,7 @@ const Navigation = styled.header`
 		right: 0;
 		width: 0;
 		bottom: -5px;
-		background: ${props => props.fontcolor || "black"};
+		background: ${props => props.fontColor || "black"};
 		height: 3px;
 		transition-property: width;
 		transition-duration: 0.3s;
@@ -94,7 +89,7 @@ const Navigation = styled.header`
 
 	.navbtn2 {
 		position: relative;
-		color: ${props => props.scrollingFontColor || "black"};
+		color: ${props => props.scrollingfontColor || "black"};
         list-style-type: none;
 	}
 
@@ -104,7 +99,7 @@ const Navigation = styled.header`
 		right: 0;
 		width: 0;
 		bottom: -5px;
-		background: ${props => props.scrollingFontColor || "black"};
+		background: ${props => props.scrollingfontColor || "black"};
 		height: 3px;
 		transition-property: width;
 		transition-duration: 0.3s;
@@ -135,16 +130,8 @@ const Navigation = styled.header`
         }
     }
 
-    @media only screen and (max-width: 450px) {
+    @media only screen and (max-width: 1445px) {
         margin: 0 -100px;
-    }
-
-    .logo-container {
-        display: flex;
-        position: relative;
-        padding: 0 0 0 0;
-        width: 7rem;
-        height: 7rem;
     }
 
     .fa-bars {
@@ -155,38 +142,25 @@ const Navigation = styled.header`
         cursor: pointer;
     }
 
+    .logo-container {
+        display: flex;
+        position: fixed;
+        margin: 0 5rem 4rem -3.5rem;
+    }
+
 	.me-logo {
-        width: 5.5rem;
-        height: 5.5rem;
-		color:${props => props.fontcolor || "black"};
+		color:${props => props.fontColor || "black"};
 	}
 
 	.thelogo {
+		width: 85px;
+		height: 85px;
 		z-index: 1;
-        width: inherit;
-        height: inherit;
-
 	}
-`;
+`
 
-const Navbar = props => {
+const ResponsiveNav = props => {
 	const [colorChange, setColorChange] = useState(false);
-	const [windowDimension, setWindowDimension] = useState(null);
-
-	useEffect(() => {
-		setWindowDimension(window.innerWidth);
-	}, []);
-
-	useEffect(() => {
-		function handleResize() {
-			setWindowDimension(window.innerWidth);
-		}
-
-		window.addEventListener("resize", handleResize);
-		return () => window.removeEventListener("resize", handleResize);
-	}, []);
-
-	const isMobile = windowDimension <= 650;
 
 	const changeNavbarColor = () => {
 		if (window.scrollY >= 120) {
@@ -202,16 +176,17 @@ const Navbar = props => {
 	},[]);
 
 	return (
-		<Navigation fontcolor={props.fontcolor} scrollingFontColor={props.scrollingFontColor}>
+		<Navigation fontColor={props.fontColor} scrollingfontColor={props.scrollingfontColor}>
 			<div className="logo-container">
 				<Link to="/">
-                    <div className="me-logo" fontcolor={props.fontcolor}>
-                        <img
-                            src={props.logo}
-                            alt="No Logo found!"
-                            className="thelogo"
-                        />
-                    </div>
+					<p style={{visibility: 'hidden'}}>For Kyle Lebert</p>
+						<div className="me-logo" fontColor={props.fontColor}>
+							<img
+								src={props.logo}
+								alt="No Logo found!"
+								className="thelogo"
+							/>
+						</div>
 					<em>
 						<div className="secret-sauce">
 							<span className="hint" style={{color: props.hintColor, position: 'absolute', top: '73%', left: '73%'}}>Change the Title of the Webpage to: CLASSIFIED</span>
@@ -252,12 +227,18 @@ const Navbar = props => {
                         Join
                         </li>
 					</NavLink>
+
 				</ul>
 			</nav>
 		</Navigation>
 	);
 }
 
-export default Navbar;
+export default ResponsiveNav;
+
+
+
+
+
 
 
