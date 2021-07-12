@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 export const Box = styled.div`
-	padding: 80px 60px;
 	background: black;
 	position: absolute;
 	bottom: 0;
@@ -24,28 +23,24 @@ export const Container = styled.div`
 export const Column = styled.div`
 	display: flex;
 	flex-direction: column;
-	text-align: left;
+	text-align: right;
 	margin-left: 60px;
 `;
 
 export const Row = styled.div`
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
 `;
 
 export const FooterLink = styled.a`
 	color: #FAFAFA;
-	margin-bottom: 20px;
+	margin-bottom: 20%;
 	font-size: 16px;
 	text-decoration: none;
 
 	&:hover {
 		color: white;
 		transition: 200ms ease-in;
-	}
-
-	& > .label-txt {
-		width: 250px;
 	}
 `;
 
@@ -54,4 +49,11 @@ export const Heading = styled.p`
 	color: #fff;
 	margin-bottom: 40px;
 	font-weight: bold;
+`;
+
+export const Text = styled.p`
+	width: 250px;
+	text-align: center;
+	margin: auto 0 auto 0;
+	color: #FAFAFA;
 `;
