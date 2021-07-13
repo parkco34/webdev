@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import Navbar from '../components/Navbar';
-import logo from '../Images/ucc-logo.png';
+import FlexBox from '../components/FlexBox';
+import Footer from '../footer/Footer';
 
 function About() {
 	const [win, setWin] = useState(window.innerWidth);
@@ -16,9 +16,12 @@ function About() {
 
     return (
 		<div className="About">
-			<Navbar hintColor="transparent" fontColor="black" scrollingFontColor="black" logo={logo} />
 			<div className="something" style={{textAlign: 'center', width: '400px', margin: '300px 0 0 800px ', fontWeight: 'bold', fontSize: '34px', fontFamily: 'Lucida Console', color: 'limegreen', backgroundColor: 'black'}} >
-				<p className="paragraph">{`Window size = ${win}`}</p>
+				<p style={{color: "yellow"}} className="paragraph">{`Window size = ${win}`}</p>
+			</div>
+			<FlexBox />
+			<div>
+				<Footer />
 			</div>
 		</div>
     );
