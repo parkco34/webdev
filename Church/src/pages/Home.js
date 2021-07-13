@@ -1,8 +1,8 @@
 import React from 'react';
-import Test from '../components/Test';
+import Test from '../components/DeleteMe';
 import styled from 'styled-components';
-import TheFooter from '../footer/TheFooter';
-import theImage from '../Images/last_supper.jpg';
+import Footer from '../footer/Footer';
+import theImage from '../Images/last_supper0.JPG';
 
 const Main = {
     Wrapper: styled.main`
@@ -23,7 +23,13 @@ const Main = {
         background-color: transparent;
         z-index: -1;
         overflow: hidden;
+		position: relative;
     `,
+	Foot: styled.div`
+		position: absolute;
+		width: 100%;
+		bottom: 0;
+	`,
 }
 
 function Home() {
@@ -32,8 +38,10 @@ function Home() {
             <Main.Wrapper backgroundImage={theImage}>
                 <Test />
             </Main.Wrapper>
-            <TheFooter />
-        </div>
+			<Main.Foot className="footer" style={{border: '1px dashed pink', color: 'limegreen'}}>
+				<Footer />
+			</Main.Foot>
+		</div>
     );
 }
 
