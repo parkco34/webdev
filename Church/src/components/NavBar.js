@@ -3,13 +3,10 @@ import styled from 'styled-components';
 import {NavLink, Link} from 'react-router-dom';
 
 const Navigation = styled.header`
-	z-index: 1;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding: 0px 300px 0;
-	height: 100px;
-	margin-bottom: -73px;
     font-family: Didot, serif;
     font-size: 1.15rem;
     overflow: hidden;
@@ -35,6 +32,7 @@ const Navigation = styled.header`
 		background-color: transparent;
 		display: flex;
 		margin: 0 35%;
+        z-index: 1;
 
 		ul {
 			display: flex;
@@ -235,6 +233,7 @@ const ResponsiveNav = props => {
 }
 
 export default ResponsiveNav;
+
 
 
 
