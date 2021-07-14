@@ -1,8 +1,8 @@
 import React from 'react';
-import Test from '../components/DeleteMe';
+import Test from '../components/Test';
 import styled from 'styled-components';
 import Footer from '../footer/Footer';
-import theImage from '../Images/last_supper0.JPG';
+import theImage from '../Images/last_supper.jpg';
 
 const Main = {
     Wrapper: styled.main`
@@ -31,7 +31,7 @@ function Home() {
     return (
         <div className="Main" >
             <Main.Wrapper backgroundImage={theImage}>
-                <Test />
+                <Test Top="15%" Left="25%" Color="white"/>
             </Main.Wrapper>
 			<Main.Foot className="footer">
 				<Footer />
@@ -41,3 +41,4 @@ function Home() {
 }
 
 export default Home;
+
