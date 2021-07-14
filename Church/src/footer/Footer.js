@@ -20,21 +20,27 @@ const Grid = {
 	Col: styled.div`
 		flex: ${props => props.size};
 	`,
+	SubContainer: styled.div`
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		align-self: center;
+	`,
 };
 
 const Footer = () => {
 	return (
 		<Grid.Container>
-			<Grid.Row style={{backgroundColor: "#DA04C9"}}>
+			<Grid.Row style={{backgroundColor: "black", color: "grey"}}>
 				<Grid.Col size={2}>
 
 				</Grid.Col>
 
 				<Grid.Col size={2}>
-					<div className="font" style={{padding: '3.0%'}}>
+					<Grid.SubContainer style={{padding: '3.0%'}}>
 						<FontAwesomeIcon href="#" color="blue" size="2x" icon={faFacebook} style={{paddingRight: '5%'}}></FontAwesomeIcon>
 						Hahn Automotive Aftermarket Parts &copy; 2021
-					</div>	
+					</Grid.SubContainer>	
 				</Grid.Col>
 
 				<Grid.Col size={2}>
