@@ -12,18 +12,13 @@ const Main = {
         background-size: cover;
         background-position: 50% 75%;
         background-repeat: no-repeat;
-        max-width: 100vw;
-        max-height: 100vh;
-        width: 100vw;
-        height: 100vh;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
         background-color: transparent;
-        z-index: -1;
         overflow: hidden;
-		position: relative;
+		position: absolute;
+		height: 100vh;
+		top: 0;
+		right: 0;
+		left: 0;
     `,
 	Foot: styled.div`
 		position: absolute;
@@ -38,7 +33,7 @@ function Home() {
             <Main.Wrapper backgroundImage={theImage}>
                 <Test />
             </Main.Wrapper>
-			<Main.Foot className="footer" style={{border: '1px dashed pink', color: 'limegreen'}}>
+			<Main.Foot className="footer">
 				<Footer />
 			</Main.Foot>
 		</div>
