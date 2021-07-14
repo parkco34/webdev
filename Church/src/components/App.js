@@ -9,7 +9,7 @@ function App() {
     return (
         <div className="App">
             <Router>
-                <NavigationBar />
+                <NavigationBar Color="black"/>
                 <Switch>
                     <Route path="/" exact component={() => <Home />} />
                     <Route path="/about" exact component={() => <About />} />
@@ -20,4 +20,5 @@ function App() {
 }
 
 export default App;
+
 
