@@ -18,21 +18,22 @@ const Navbar = {
         padding: 1rem 7rem;
         justify-content: space-between;
         align-items: center;
-		color white;
+		color ${props => props.Color || "black"};
 		z-index: 1;
+        font-size: 1.25rem;
 
 		a {
 			text-decoration: none;
 		}
 
 		a.active {
-			color: grey;
+			color: ${props => props.Color || "white"};
 		}
 
 		.navbtn1 {
 			position: relative;
 			list-style-type: none;
-			color: ${props => props.fontColor || "white"};
+			color: ${props => props.Color || "white"};
 			opacity: 1;
 			transition: all 0.6s;
 		}
@@ -46,7 +47,7 @@ const Navbar = {
 			transition-proerty: width;
 			transition-duration: 0.3s;
 			transition-timing-function: ease-out;
-			background: ${props => props.fontColor || "white"};
+			background: ${props => props.Color || "black"};
 		}
 
 		.navbtn1:hover:after,
@@ -70,7 +71,8 @@ const Navbar = {
 		margin-right: 4rem;
     `,
     Item: styled.li`
-        padding: 0 2rem 0 4rem;
+        margin: 0 3.5rem 0 4rem;
+        padding: 0 0 0 0;
         cursor: pointer;
     `,
 };
@@ -93,17 +95,18 @@ const MobileNav = {
         flex: 1;
         padding: 0 2rem;
         justify-content: space-around;
+        margin-right: 13rem;
     `,
     Item: styled(Navbar.Item)`
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		font-size: 1.2rem;
+		font-size: .85rem;
     `,
 	Icon: styled.span``,
 };
 
-const NavigationBar = props => {	
+const NavigationBar = props => {
     const [windowDimension, setWindowDimension] = useState(window.innerWidth);
 
     useEffect(() => {
@@ -124,25 +127,25 @@ const NavigationBar = props => {
                     <MobileNav.Wrapper>
                         <MobileNav.Items>
 							<NavLink activeClassName="active" to="/">
-								<MobileNav.Item className="navbtn1">
+								<MobileNav.Item className="navbtn1" style={{color: `${props.Color}`}}>
 									<MobileNav.Icon>
 										<Home size={16} />
 									</MobileNav.Icon>
 									Home
 								</MobileNav.Item>
 							</NavLink>
-							
+
 							<NavLink activeClassName="active" to="/about">
-								<MobileNav.Item className="navbtn1">
+								<MobileNav.Item className="navbtn1" style={{color: `${props.Color}`}}>
 									<MobileNav.Icon>
 										<Info size={16} />
 									</MobileNav.Icon>
 									About
 								</MobileNav.Item>
 							</NavLink>
-							
+
 							<NavLink activeClassName="active" to="/join">
-								<MobileNav.Item className="navbtn1">
+								<MobileNav.Item className="navbtn1" style={{color: `${props.Color}`}}>
 									<MobileNav.Icon>
 										<User size={16} />
 									</MobileNav.Icon>
@@ -154,18 +157,18 @@ const NavigationBar = props => {
                     </MobileNav.Wrapper>
                     ) : (
                     <Navbar.Wrapper>
-						<Navbar.Logo src={logo} alt="NO LOGO FOUND!"/> 
+						<Navbar.Logo src={logo} alt="NO LOGO FOUND!"/>
                         <Navbar.Items>
 							<NavLink activeClassName="active" to="/">
-								<Navbar.Item className="navbtn1">Home</Navbar.Item>
+								<Navbar.Item className="navbtn1" style={{color: `${props.Color}`}}>Home</Navbar.Item>
 							</NavLink>
-							
+
 							<NavLink activeClassName="active" to="/about">
-								<Navbar.Item className="navbtn1">About</Navbar.Item>
+								<Navbar.Item className="navbtn1" style={{color: `${props.Color}`}}>About</Navbar.Item>
 							</NavLink>
 
 							<NavLink acitveClassName="active" to="/join">
-								<Navbar.Item className="navbtn1">Join</Navbar.Item>
+								<Navbar.Item className="navbtn1" style={{color: `${props.Color}`}}>Join</Navbar.Item>
 							</NavLink>
                         </Navbar.Items>
                     </Navbar.Wrapper>
@@ -177,4 +180,5 @@ const NavigationBar = props => {
 }
 
 export default NavigationBar;
+
 
