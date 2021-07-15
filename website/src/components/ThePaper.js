@@ -15,17 +15,19 @@ const useStyles = makeStyles(theme => ({
         },
     },
 	proper: props => ({
-		background: `url(${props.Background})`
+		backgroundImage: `url(${props.background})`,
+		backgroundSize: props.size,
+		backgroundPosition: props.backgroundPosition,
+		backgroundRepeat: 'no-repeat',
 	})
 }));
 
 export default function ThePaper(props) {
     const classes = useStyles(props);
-	const {proper} = props;
 
     return (
         <div className={classes.root}>
-            <Paper elevation={3} Background={props.Background} background={props.background}/>
+            <Paper elevation={3} className={classes.proper} size={props.size} background={props.background} backgroundPosition={props.backgroundPosition} />
         </div>
     );
 }
