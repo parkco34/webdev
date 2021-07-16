@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Programming from './learning/Programming';
+import Movies from '../entertainment/Movies';
 import img1 from '../Images/math.jpg';
 import img2 from'../Images/cs.jpg';
 import img3 from '../Images/halt.jpg';
@@ -154,6 +155,10 @@ const LearningSegment = () => {
 							className="halt-catchfire"
 						>
 						</iframe>
+					</div>
+
+					<div className="api-movies">
+						<Movies />
 					</div>
 				</section>
 				}
