@@ -1,13 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import logo from '../myImages/logo22.png';
+import logo from '../Images/logo2.jpg';
 import {Home, User, Info} from 'react-feather';
 import {NavLink, Link} from 'react-router-dom';
+import MandroidBB from './MandroidBB.css';
 
 const Styles = styled.div`
     display: flex;
+	position: fixed;
     background-color: transparent;
 	font-size: 16px;
+	font-family: MandroidBB;
 `;
 
 const Navbar = {
@@ -44,10 +47,10 @@ const Navbar = {
 			width: 0;
 			bottom: -5px;
 			height: 3px;
-			transition-proerty: width;
+			transition-property: width;
 			transition-duration: 0.3s;
 			transition-timing-function: ease-out;
-			background: ${props => props.Slider || "white"};
+			background-color: ${props => props.Slider || "grey"};
 		}
 
 		.navbtn1:hover:after,
@@ -61,17 +64,17 @@ const Navbar = {
     `,
     Logo: styled.img`
         border: 1px solid grey;
-		margin: 0 0 0 4%;
+		margin: 0 0 0 9%;
 		width: 5.5rem;
 		height: 5.5rem;
     `,
     Items: styled.ul`
         display: flex;
         list-style: none;
-        margin: 1rem 0 0 5rem;
+        margin: 1rem 0 0 53rem;
     `,
     Item: styled.li`
-        margin: 0 3.5rem 0 4rem;
+        margin: 0 3rem 0 2rem;
         padding: 0 0 0 0;
         cursor: pointer;
     `,
@@ -160,23 +163,33 @@ const NavigationBar = props => {
 						<Navbar.Logo src={logo} alt="NO LOGO FOUND!"/>
                         <Navbar.Items>
 							<NavLink activeClassName="active" to="/">
-								<Navbar.Item className="navbtn1" style={{color: `${props.Color}`}}>Home</Navbar.Item>
+								<Navbar.Item className="navbtn1" Slider={props.Slider} style={{color: `${props.Color}`}}>
+									Home
+								</Navbar.Item>
 							</NavLink>
 
 							<NavLink activeClassName="active" to="/about">
-								<Navbar.Item className="navbtn1" style={{color: `${props.Color}`}}>About</Navbar.Item>
+								<Navbar.Item className="navbtn1" style={{color: `${props.Color}`}}>
+									About
+								</Navbar.Item>
 							</NavLink>
 
 							<NavLink acitveClassName="active" to="/join">
-								<Navbar.Item className="navbtn1" style={{color: `${props.Color}`}}>Join</Navbar.Item>
+								<Navbar.Item className="navbtn1" style={{color: `${props.Color}`}}>
+									Join
+								</Navbar.Item>
 							</NavLink>
 
 							<NavLink acitveClassName="active" to="/goal">
-								<Navbar.Item className="navbtn1" style={{color: `${props.Color}`}}>Goal</Navbar.Item>
+								<Navbar.Item className="navbtn1" style={{color: `${props.Color}`}}>
+									Goal
+								</Navbar.Item>
 							</NavLink>
 
 							<NavLink acitveClassName="active" to="/store">
-								<Navbar.Item className="navbtn1" style={{color: `${props.Color}`}}>Store</Navbar.Item>
+								<Navbar.Item className="navbtn1" style={{color: `${props.Color}`}}>
+									Store
+								</Navbar.Item>
 							</NavLink>
                         </Navbar.Items>
                     </Navbar.Wrapper>
