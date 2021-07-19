@@ -3,9 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Programming from './learning/Programming';
 import Movies from '../entertainment/Movies';
-import img1 from '../Images/math.jpg';
-import img2 from'../Images/cs.jpg';
-import img3 from '../Images/halt.jpg';
+import img1 from '../myImages/math.jpg';
+import img2 from'../myImages/cs.jpg';
+import img3 from '../myImages/halt.jpg';
 import './MandroidBB.css';
 
 const useStyles = makeStyles(theme => ({
@@ -149,8 +149,8 @@ const LearningSegment = () => {
 				{clicked1 &&
 				<section className={classes.root}>
 					<div className="halt">
-						<iframe 
-							src="https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)" 
+						<iframe
+							src="https://en.wikipedia.org/wiki/Halt_and_Catch_Fire_(computing)"
 							frameborder="0"
 							className="halt-catchfire"
 						>
@@ -168,5 +168,6 @@ const LearningSegment = () => {
 }
 
 export default LearningSegment;
+
 
 
