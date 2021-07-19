@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import logo from '../Images/logo2.jpg';
+import logo from '../myImages/logo2.jpg';
 import {Home, User, Info} from 'react-feather';
 import {NavLink, Link} from 'react-router-dom';
 import MandroidBB from './MandroidBB.css';
@@ -11,6 +11,7 @@ const Styles = styled.div`
     background-color: transparent;
 	font-size: 16px;
 	font-family: MandroidBB;
+    z-index: 1;
 `;
 
 const Navbar = {
@@ -71,7 +72,7 @@ const Navbar = {
     Items: styled.ul`
         display: flex;
         list-style: none;
-        margin: 1rem 0 0 53rem;
+        margin: 1rem 0 0 30rem;
     `,
     Item: styled.li`
         margin: 0 3rem 0 2rem;
@@ -163,7 +164,7 @@ const NavigationBar = props => {
 						<Navbar.Logo src={logo} alt="NO LOGO FOUND!"/>
                         <Navbar.Items>
 							<NavLink activeClassName="active" to="/">
-								<Navbar.Item className="navbtn1" Slider={props.Slider} style={{color: `${props.Color}`}}>
+								<Navbar.Item className="navbtn1" style={{color: `${props.Color}`}}>
 									Home
 								</Navbar.Item>
 							</NavLink>
@@ -201,6 +202,7 @@ const NavigationBar = props => {
 }
 
 export default NavigationBar;
+
 
 
 
